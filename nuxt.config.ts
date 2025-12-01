@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils",
     "reka-ui/nuxt",
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/i18n",
   ],
 
   extends: [
@@ -32,4 +33,14 @@ export default defineNuxtConfig({
   alias: {
     "@ui": fileURLToPath(new URL("./layers/ui-kit", import.meta.url)),
   },
+
+  // Modules configuration
+  i18n: {
+    defaultLocale: "en",
+    locales: [
+      { code: "en", name: "English", file: "en.json" },
+      { code: "fr", name: "Français", file: "fr.json" },
+    ],
+  },
 });
+

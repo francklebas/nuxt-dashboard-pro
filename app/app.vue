@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import DpButton from "@ui/DpButton.vue";
+import DpNavigation from "@ui/DpNavigation.vue";
 
 function log(message: string): string {
   console.log(message);
@@ -15,6 +16,7 @@ useHead({
 <template>
   <div>
     <NuxtRouteAnnouncer />
+    <DpNavigation />
     <nav class="p-4 border-b">
       <a href="/" class="font-semibold">Home</a>
     </nav>
