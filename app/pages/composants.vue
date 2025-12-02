@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import DpButton from "@ui/DpButton.vue";
 import DpModal from "@ui/components/DpModal.vue";
+import DpComponentPlayground from "@ui/components/DpComponentPlayground.vue";
+import type { PlaygroundControl } from "@ui/components/DpComponentPlayground.vue";
 
 const { t } = useI18n();
 
@@ -27,6 +29,60 @@ const activeSection = ref("buttons");
 
 // Modal state for demo
 const demoModalOpen = ref(false);
+
+// Button playground controls
+const buttonControls: PlaygroundControl[] = [
+  {
+    name: "variant",
+    type: "select",
+    label: "Variant",
+    options: ["primary", "secondary", "outline", "ghost", "destructive"],
+  },
+  {
+    name: "size",
+    type: "select",
+    label: "Size",
+    options: ["sm", "md", "lg"],
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    label: "Disabled",
+  },
+];
+
+// Modal playground controls
+const modalControls: PlaygroundControl[] = [
+  {
+    name: "title",
+    type: "text",
+    label: "Title",
+    default: "Modal Title",
+    placeholder: "Enter modal title",
+  },
+  {
+    name: "description",
+    type: "text",
+    label: "Description",
+    default: "This is a modal description",
+    placeholder: "Enter modal description",
+  },
+  {
+    name: "size",
+    type: "select",
+    label: "Size",
+    options: ["sm", "md", "lg", "xl", "full"],
+  },
+  {
+    name: "showClose",
+    type: "boolean",
+    label: "Show Close Button",
+    default: true,
+  },
+];
+
+// Playground modal state
+const playgroundModalOpen = ref(false);
 
 // Scroll spy - update active section based on scroll position
 const handleScroll = () => {
@@ -104,15 +160,38 @@ onUnmounted(() => {
         <main class="flex-1 space-y-12">
           <!-- Buttons Section -->
           <section id="buttons" class="scroll-mt-20">
+            <div class="mb-6">
+              <h2 class="text-2xl font-bold text-foreground mb-2">
+                {{ $t("components.buttons") }}
+              </h2>
+              <p class="text-sm text-muted-foreground">
+                {{ $t("components.buttonsDesc") }}
+              </p>
+            </div>
+
+            <!-- Button Playground -->
+            <div class="mb-8">
+              <DpComponentPlayground
+                component-name="DpButton"
+                :controls="buttonControls"
+                :default-props="{ variant: 'primary', size: 'md' }"
+                default-slot="Click me"
+              >
+                <template #preview="{ props: componentProps, slotContent }">
+                  <DpButton
+                    :variant="componentProps.variant"
+                    :size="componentProps.size"
+                    :disabled="componentProps.disabled"
+                  >
+                    {{ slotContent }}
+                  </DpButton>
+                </template>
+              </DpComponentPlayground>
+            </div>
+
+            <!-- Examples -->
             <div class="bg-background border border-border rounded-lg shadow-sm p-6">
-              <div class="mb-6">
-                <h2 class="text-2xl font-bold text-foreground mb-2">
-                  {{ $t("components.buttons") }}
-                </h2>
-                <p class="text-sm text-muted-foreground">
-                  {{ $t("components.buttonsDesc") }}
-                </p>
-              </div>
+              <h3 class="text-xl font-semibold text-foreground mb-6">Examples</h3>
 
               <div class="space-y-8">
                 <!-- Variants -->
@@ -170,15 +249,45 @@ onUnmounted(() => {
 
           <!-- Modals Section -->
           <section id="modals" class="scroll-mt-20">
+            <div class="mb-6">
+              <h2 class="text-2xl font-bold text-foreground mb-2">
+                {{ $t("components.modals") }}
+              </h2>
+              <p class="text-sm text-muted-foreground">
+                {{ $t("components.modalsDesc") }}
+              </p>
+            </div>
+
+            <!-- Modal Playground -->
+            <div class="mb-8">
+              <DpComponentPlayground
+                component-name="DpModal"
+                :controls="modalControls"
+                :default-props="{ title: 'Modal Title', description: 'This is a modal description', size: 'md', showClose: true }"
+                default-slot="Modal content goes here"
+              >
+                <template #preview="{ props: componentProps, slotContent }">
+                  <DpModal
+                    v-model:open="playgroundModalOpen"
+                    :title="componentProps.title"
+                    :description="componentProps.description"
+                    :size="componentProps.size"
+                    :show-close="componentProps.showClose"
+                  >
+                    <template #trigger>
+                      <DpButton variant="primary">Open Playground Modal</DpButton>
+                    </template>
+                    <div class="text-foreground">
+                      {{ slotContent }}
+                    </div>
+                  </DpModal>
+                </template>
+              </DpComponentPlayground>
+            </div>
+
+            <!-- Examples -->
             <div class="bg-background border border-border rounded-lg shadow-sm p-6">
-              <div class="mb-6">
-                <h2 class="text-2xl font-bold text-foreground mb-2">
-                  {{ $t("components.modals") }}
-                </h2>
-                <p class="text-sm text-muted-foreground">
-                  {{ $t("components.modalsDesc") }}
-                </p>
-              </div>
+              <h3 class="text-xl font-semibold text-foreground mb-6">Examples</h3>
 
               <div class="space-y-8">
                 <!-- Basic Modal -->
