@@ -54,7 +54,7 @@ onMounted(() => {
 
 // Generate code snippet
 const codeSnippet = computed(() => {
-  const props = Object.entries(propsState.value)
+  const propsString = Object.entries(propsState.value)
     .filter(([_, value]) => {
       // Filter out default values to keep code clean
       if (value === false || value === "" || value === 0) return false;
@@ -74,9 +74,9 @@ const codeSnippet = computed(() => {
   const hasSlot = slotContent.value && slotContent.value.trim() !== "";
 
   if (hasSlot) {
-    return `<${props.componentName}${props ? "\n" + props : ""}>\n  ${slotContent.value}\n</${props.componentName}>`;
+    return `<${props.componentName}${propsString ? "\n" + propsString : ""}>\n  ${slotContent.value}\n</${props.componentName}>`;
   } else {
-    return `<${props.componentName}${props ? "\n" + props + "\n" : " "}/>`;
+    return `<${props.componentName}${propsString ? "\n" + propsString + "\n" : " "}/>`;
   }
 });
 
