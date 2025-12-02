@@ -1,3 +1,25 @@
 {
-  "welcome": "Welcome"
+  "welcome": "Welcome",
+  "nav": {
+    "home": "Home",
+    "form": "Contact Form"
+  },
+  "form": {
+    "title": "Contact Form",
+    "description": "Fill out the form below to get in touch with us",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "email": "Email Address",
+    "emailPlaceholder": "your.email{'@'}example.com",
+    "message": "Message",
+    "messagePlaceholder": "Type your message here...",
+    "submit": "Send Message",
+    "cancel": "Cancel",
+    "success": "Your message has been sent successfully!",
+    "error": "An error occurred. Please try again.",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address"
+  }
 }

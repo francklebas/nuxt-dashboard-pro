@@ -9,10 +9,30 @@ const { locale, locales, setLocale } = useI18n();
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo / Brand -->
-        <div class="flex-shrink-0">
-          <h1 class="text-xl font-bold text-foreground">
-            {{ $t("welcome") }}
-          </h1>
+        <div class="flex items-center gap-8">
+          <NuxtLink to="/" class="flex-shrink-0">
+            <h1 class="text-xl font-bold text-foreground">
+              {{ $t("welcome") }}
+            </h1>
+          </NuxtLink>
+
+          <!-- Navigation links -->
+          <div class="hidden md:flex md:items-center md:gap-1">
+            <NuxtLink
+              to="/"
+              class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
+            >
+              {{ $t("nav.home") }}
+            </NuxtLink>
+            <NuxtLink
+              to="/form"
+              class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
+            >
+              {{ $t("nav.form") }}
+            </NuxtLink>
+          </div>
         </div>
 
         <!-- Navigation items -->
