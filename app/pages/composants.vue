@@ -2,7 +2,9 @@
 import DpButton from "@ui/DpButton.vue";
 import DpModal from "@ui/components/DpModal.vue";
 import DpComponentPlayground from "@ui/components/DpComponentPlayground.vue";
+import DpTabs from "@ui/components/DpTabs.vue";
 import type { PlaygroundControl } from "@ui/components/DpComponentPlayground.vue";
+import type { DpTab } from "@ui/components/DpTabs.vue";
 
 const { t } = useI18n();
 
@@ -22,10 +24,21 @@ const sections = [
     name: "components.modals",
     description: "components.modalsDesc",
   },
+  {
+    id: "tabs",
+    name: "components.tabs",
+    description: "components.tabsDesc",
+  },
 ];
 
 // Active section for scrollspy
 const activeSection = ref("buttons");
+
+// Tabs configuration
+const componentTabs: DpTab[] = [
+  { id: "playground", label: "Playground", icon: "lucide:sparkles" },
+  { id: "examples", label: "Examples", icon: "lucide:grid-3x3" },
+];
 
 // Modal state for demo
 const demoModalOpen = ref(false);
@@ -81,6 +94,13 @@ const modalControls: PlaygroundControl[] = [
   },
 ];
 
+// Tabs playground - demo tabs configuration
+const demoTabs: DpTab[] = [
+  { id: "tab1", label: "Tab 1", icon: "lucide:home" },
+  { id: "tab2", label: "Tab 2", icon: "lucide:settings" },
+  { id: "tab3", label: "Tab 3", icon: "lucide:user" },
+];
+
 // Playground modal state
 const playgroundModalOpen = ref(false);
 
@@ -110,6 +130,37 @@ const scrollToSection = (sectionId: string) => {
       top: elementPosition,
       behavior: "smooth",
     });
+  }
+};
+
+// Copy tabs code to clipboard
+const copyTabsCode = async () => {
+  const code = `<script setup>
+const tabs = [
+  { id: "tab1", label: "Home", icon: "lucide:home" },
+  { id: "tab2", label: "Settings", icon: "lucide:settings" },
+  { id: "tab3", label: "User", icon: "lucide:user" }
+];
+<\/script>
+
+<template>
+  <DpTabs :tabs="tabs" default-tab="tab1">
+    <template #tab1>
+      <div>Home content</div>
+    </template>
+    <template #tab2>
+      <div>Settings content</div>
+    </template>
+    <template #tab3>
+      <div>User content</div>
+    </template>
+  </DpTabs>
+</template>`;
+
+  try {
+    await navigator.clipboard.writeText(code);
+  } catch (err) {
+    console.error("Failed to copy code:", err);
   }
 };
 
@@ -169,31 +220,31 @@ onUnmounted(() => {
               </p>
             </div>
 
-            <!-- Button Playground -->
-            <div class="mb-8">
-              <DpComponentPlayground
-                component-name="DpButton"
-                :controls="buttonControls"
-                :default-props="{ variant: 'primary', size: 'md' }"
-                default-slot="Click me"
-              >
-                <template #preview="{ props: componentProps, slotContent }">
-                  <DpButton
-                    :variant="componentProps.variant"
-                    :size="componentProps.size"
-                    :disabled="componentProps.disabled"
-                  >
-                    {{ slotContent }}
-                  </DpButton>
-                </template>
-              </DpComponentPlayground>
-            </div>
+            <!-- Tabs -->
+            <DpTabs :tabs="componentTabs" default-tab="playground">
+              <!-- Playground Tab -->
+              <template #playground>
+                <DpComponentPlayground
+                  component-name="DpButton"
+                  :controls="buttonControls"
+                  :default-props="{ variant: 'primary', size: 'md' }"
+                  default-slot="Click me"
+                >
+                  <template #preview="{ props: componentProps, slotContent }">
+                    <DpButton
+                      :variant="componentProps.variant"
+                      :size="componentProps.size"
+                      :disabled="componentProps.disabled"
+                    >
+                      {{ slotContent }}
+                    </DpButton>
+                  </template>
+                </DpComponentPlayground>
+              </template>
 
-            <!-- Examples -->
-            <div class="bg-background border border-border rounded-lg shadow-sm p-6">
-              <h3 class="text-xl font-semibold text-foreground mb-6">Examples</h3>
-
-              <div class="space-y-8">
+              <!-- Examples Tab -->
+              <template #examples>
+                <div class="space-y-8">
                 <!-- Variants -->
                 <div>
                   <h3 class="text-lg font-semibold text-foreground mb-4">Variants</h3>
@@ -243,8 +294,23 @@ onUnmounted(() => {
                     </DpButton>
                   </div>
                 </div>
+
+                <!-- Features List -->
+                <div>
+                  <h3 class="text-lg font-semibold text-foreground mb-4">Features</h3>
+                  <ul class="list-disc list-inside space-y-2 text-muted-foreground">
+                    <li>Multiple variants (primary, secondary, outline, ghost, destructive)</li>
+                    <li>Three sizes (small, medium, large)</li>
+                    <li>Disabled state support</li>
+                    <li>Icon support with flexible slot composition</li>
+                    <li>Fully accessible with proper ARIA attributes</li>
+                    <li>Responsive design with TailwindCSS</li>
+                    <li>Hover and focus states</li>
+                  </ul>
+                </div>
               </div>
-            </div>
+              </template>
+            </DpTabs>
           </section>
 
           <!-- Modals Section -->
@@ -258,38 +324,38 @@ onUnmounted(() => {
               </p>
             </div>
 
-            <!-- Modal Playground -->
-            <div class="mb-8">
-              <DpComponentPlayground
-                component-name="DpModal"
-                :controls="modalControls"
-                :default-props="{ title: 'Modal Title', description: 'This is a modal description', size: 'md', showClose: true }"
-                default-slot="Modal content goes here"
-              >
-                <template #preview="{ props: componentProps, slotContent }">
-                  <DpModal
-                    v-model:open="playgroundModalOpen"
-                    :title="componentProps.title"
-                    :description="componentProps.description"
-                    :size="componentProps.size"
-                    :show-close="componentProps.showClose"
-                  >
-                    <template #trigger>
-                      <DpButton variant="primary">Open Playground Modal</DpButton>
-                    </template>
-                    <div class="text-foreground">
-                      {{ slotContent }}
-                    </div>
-                  </DpModal>
-                </template>
-              </DpComponentPlayground>
-            </div>
+            <!-- Tabs -->
+            <DpTabs :tabs="componentTabs" default-tab="playground">
+              <!-- Playground Tab -->
+              <template #playground>
+                <DpComponentPlayground
+                  component-name="DpModal"
+                  :controls="modalControls"
+                  :default-props="{ title: 'Modal Title', description: 'This is a modal description', size: 'md', showClose: true }"
+                  default-slot="Modal content goes here"
+                >
+                  <template #preview="{ props: componentProps, slotContent }">
+                    <DpModal
+                      v-model:open="playgroundModalOpen"
+                      :title="componentProps.title"
+                      :description="componentProps.description"
+                      :size="componentProps.size"
+                      :show-close="componentProps.showClose"
+                    >
+                      <template #trigger>
+                        <DpButton variant="primary">Open Playground Modal</DpButton>
+                      </template>
+                      <div class="text-foreground">
+                        {{ slotContent }}
+                      </div>
+                    </DpModal>
+                  </template>
+                </DpComponentPlayground>
+              </template>
 
-            <!-- Examples -->
-            <div class="bg-background border border-border rounded-lg shadow-sm p-6">
-              <h3 class="text-xl font-semibold text-foreground mb-6">Examples</h3>
-
-              <div class="space-y-8">
+              <!-- Examples Tab -->
+              <template #examples>
+                <div class="space-y-8">
                 <!-- Basic Modal -->
                 <div>
                   <h3 class="text-lg font-semibold text-foreground mb-4">Basic Modal</h3>
@@ -342,8 +408,199 @@ onUnmounted(() => {
                     </DpModal>
                   </div>
                 </div>
+
+                <!-- Features List -->
+                <div>
+                  <h3 class="text-lg font-semibold text-foreground mb-4">Features</h3>
+                  <ul class="list-disc list-inside space-y-2 text-muted-foreground">
+                    <li>Multiple sizes (sm, md, lg, xl, full)</li>
+                    <li>Customizable title and description</li>
+                    <li>Optional close button</li>
+                    <li>Trigger slot for flexible activation</li>
+                    <li>Backdrop overlay with click-to-close</li>
+                    <li>Keyboard support (Escape to close)</li>
+                    <li>Built with Reka UI Dialog (Radix Vue)</li>
+                    <li>Full ARIA accessibility compliance</li>
+                    <li>Focus trap and focus return</li>
+                    <li>Portal-based rendering</li>
+                  </ul>
+                </div>
               </div>
+              </template>
+            </DpTabs>
+          </section>
+
+          <!-- Tabs Section -->
+          <section id="tabs" class="scroll-mt-20">
+            <div class="mb-6">
+              <h2 class="text-2xl font-bold text-foreground mb-2">
+                {{ $t("components.tabs") }}
+              </h2>
+              <p class="text-sm text-muted-foreground">
+                {{ $t("components.tabsDesc") }}
+              </p>
             </div>
+
+            <!-- Tabs component tabs -->
+            <DpTabs :tabs="componentTabs" default-tab="playground">
+              <!-- Playground Tab -->
+              <template #playground>
+                <div class="bg-background border border-border rounded-lg shadow-sm overflow-hidden">
+                  <!-- Info Section -->
+                  <div class="border-b border-border bg-muted/30 p-6">
+                    <h3 class="text-lg font-semibold text-foreground mb-4">Playground</h3>
+                    <p class="text-sm text-muted-foreground mb-4">
+                      The DpTabs component is demonstrated on this page itself. Each component section (Buttons, Modals, and Tabs) uses the tabs component to organize Playground and Examples content.
+                    </p>
+                  </div>
+
+                  <!-- Preview Section -->
+                  <div class="p-6 bg-background">
+                    <div class="flex items-center justify-between mb-4">
+                      <h4 class="text-sm font-semibold text-foreground">Live Preview</h4>
+                    </div>
+
+                    <div class="flex items-center justify-center p-8 border-2 border-dashed border-border rounded-lg bg-muted/20">
+                      <div class="w-full max-w-2xl">
+                        <DpTabs :tabs="demoTabs" default-tab="tab1">
+                          <template #tab1>
+                            <div class="p-6 bg-background border border-border rounded-lg">
+                              <h4 class="text-lg font-semibold text-foreground mb-2">Home Tab</h4>
+                              <p class="text-muted-foreground">This is the content for the home tab.</p>
+                            </div>
+                          </template>
+                          <template #tab2>
+                            <div class="p-6 bg-background border border-border rounded-lg">
+                              <h4 class="text-lg font-semibold text-foreground mb-2">Settings Tab</h4>
+                              <p class="text-muted-foreground">This is the content for the settings tab.</p>
+                            </div>
+                          </template>
+                          <template #tab3>
+                            <div class="p-6 bg-background border border-border rounded-lg">
+                              <h4 class="text-lg font-semibold text-foreground mb-2">User Tab</h4>
+                              <p class="text-muted-foreground">This is the content for the user tab.</p>
+                            </div>
+                          </template>
+                        </DpTabs>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Code Section -->
+                  <div class="border-t border-border bg-muted/30 p-6">
+                    <div class="flex items-center justify-between mb-3">
+                      <h4 class="text-sm font-semibold text-foreground">Usage Example</h4>
+                      <button
+                        @click="copyTabsCode"
+                        class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+                      >
+                        <Icon name="lucide:copy" class="w-4 h-4" />
+                        Copy
+                      </button>
+                    </div>
+
+                    <pre class="p-4 bg-background border border-border rounded-md overflow-x-auto text-sm"><code class="text-foreground font-mono">&lt;script setup&gt;
+const tabs = [
+  { id: "tab1", label: "Home", icon: "lucide:home" },
+  { id: "tab2", label: "Settings", icon: "lucide:settings" },
+  { id: "tab3", label: "User", icon: "lucide:user" }
+];
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;DpTabs :tabs="tabs" default-tab="tab1"&gt;
+    &lt;template #tab1&gt;
+      &lt;div&gt;Home content&lt;/div&gt;
+    &lt;/template&gt;
+    &lt;template #tab2&gt;
+      &lt;div&gt;Settings content&lt;/div&gt;
+    &lt;/template&gt;
+    &lt;template #tab3&gt;
+      &lt;div&gt;User content&lt;/div&gt;
+    &lt;/template&gt;
+  &lt;/DpTabs&gt;
+&lt;/template&gt;</code></pre>
+                  </div>
+                </div>
+              </template>
+
+              <!-- Examples Tab -->
+              <template #examples>
+                <div class="space-y-8">
+                  <!-- Basic Tabs -->
+                  <div>
+                    <h3 class="text-lg font-semibold text-foreground mb-4">Basic Tabs</h3>
+                    <DpTabs
+                      :tabs="[
+                        { id: 'overview', label: 'Overview' },
+                        { id: 'details', label: 'Details' },
+                        { id: 'settings', label: 'Settings' }
+                      ]"
+                      default-tab="overview"
+                    >
+                      <template #overview>
+                        <div class="p-4 bg-muted/20 rounded-lg">
+                          <p class="text-foreground">Overview content goes here.</p>
+                        </div>
+                      </template>
+                      <template #details>
+                        <div class="p-4 bg-muted/20 rounded-lg">
+                          <p class="text-foreground">Detailed information goes here.</p>
+                        </div>
+                      </template>
+                      <template #settings>
+                        <div class="p-4 bg-muted/20 rounded-lg">
+                          <p class="text-foreground">Settings panel goes here.</p>
+                        </div>
+                      </template>
+                    </DpTabs>
+                  </div>
+
+                  <!-- Tabs with Icons -->
+                  <div>
+                    <h3 class="text-lg font-semibold text-foreground mb-4">Tabs with Icons</h3>
+                    <DpTabs
+                      :tabs="[
+                        { id: 'files', label: 'Files', icon: 'lucide:folder' },
+                        { id: 'images', label: 'Images', icon: 'lucide:image' },
+                        { id: 'documents', label: 'Documents', icon: 'lucide:file-text' }
+                      ]"
+                      default-tab="files"
+                    >
+                      <template #files>
+                        <div class="p-4 bg-muted/20 rounded-lg">
+                          <p class="text-foreground">📁 File manager interface</p>
+                        </div>
+                      </template>
+                      <template #images>
+                        <div class="p-4 bg-muted/20 rounded-lg">
+                          <p class="text-foreground">🖼️ Image gallery interface</p>
+                        </div>
+                      </template>
+                      <template #documents>
+                        <div class="p-4 bg-muted/20 rounded-lg">
+                          <p class="text-foreground">📄 Document list interface</p>
+                        </div>
+                      </template>
+                    </DpTabs>
+                  </div>
+
+                  <!-- Features List -->
+                  <div>
+                    <h3 class="text-lg font-semibold text-foreground mb-4">Features</h3>
+                    <ul class="list-disc list-inside space-y-2 text-muted-foreground">
+                      <li>Full ARIA accessibility support (role, aria-selected, aria-controls)</li>
+                      <li>Keyboard navigation (Arrow keys, Tab, Enter)</li>
+                      <li>Optional icons with Nuxt Icon</li>
+                      <li>v-model support for external state control</li>
+                      <li>Named slots for flexible content organization</li>
+                      <li>Independent state for multiple instances</li>
+                      <li>Automatic focus management</li>
+                    </ul>
+                  </div>
+                </div>
+              </template>
+            </DpTabs>
           </section>
         </main>
       </div>

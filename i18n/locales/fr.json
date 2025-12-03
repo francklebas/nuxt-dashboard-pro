@@ -11,7 +11,9 @@
     "buttons": "Boutons",
     "buttonsDesc": "Composant bouton avec plusieurs variantes et tailles",
     "modals": "Modales",
-    "modalsDesc": "Boîtes de dialogue modales pour afficher du contenu"
+    "modalsDesc": "Boîtes de dialogue modales pour afficher du contenu",
+    "tabs": "Onglets",
+    "tabsDesc": "Composant de navigation par onglets accessible avec support d'icônes"
   },
   "form": {
     "title": "Formulaire de contact",

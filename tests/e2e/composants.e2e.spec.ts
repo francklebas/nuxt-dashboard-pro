@@ -16,6 +16,7 @@ test.describe("Components Page", () => {
     await expect(page.locator("main")).toBeVisible();
     await expect(page.locator("#buttons")).toBeVisible();
     await expect(page.locator("#modals")).toBeVisible();
+    await expect(page.locator("#tabs")).toBeVisible();
   });
 
   test("should have sidebar navigation in DOM", async ({ page }) => {
@@ -23,13 +24,17 @@ test.describe("Components Page", () => {
     const sidebar = page.locator("aside");
     await expect(sidebar).toBeAttached();
 
-    // Check navigation items exist (at least 2 buttons)
+    // Check navigation items exist (at least 3 buttons for buttons, modals, tabs)
     const navButtons = sidebar.locator("button");
-    expect(await navButtons.count()).toBeGreaterThanOrEqual(2);
+    expect(await navButtons.count()).toBeGreaterThanOrEqual(3);
   });
 
   test("should display button variants and sizes", async ({ page }) => {
     const buttonsSection = page.locator("#buttons");
+
+    // Click on Examples tab to see button variants
+    await buttonsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
 
     // Check button variants (scope to buttons section to avoid modal buttons)
     await expect(buttonsSection.getByRole("button", { name: "Primary" })).toBeVisible();
@@ -52,11 +57,21 @@ test.describe("Components Page", () => {
     const modalsSection = page.locator("#modals");
     await expect(modalsSection).toBeVisible();
 
+    // Click on Examples tab to see modal examples
+    await modalsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
     // Check modal trigger button
     await expect(page.getByRole("button", { name: /open modal/i })).toBeVisible();
   });
 
   test("should open modal when clicking trigger button", async ({ page }) => {
+    const modalsSection = page.locator("#modals");
+
+    // Click on Examples tab to see modal examples
+    await modalsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
     // Click modal trigger
     await page.getByRole("button", { name: /open modal/i }).click();
     await page.waitForTimeout(300);
@@ -91,6 +106,12 @@ test.describe("Components Page", () => {
   });
 
   test("should work with different button variants", async ({ page }) => {
+    const buttonsSection = page.locator("#buttons");
+
+    // Click on Examples tab to see button variants
+    await buttonsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
     // Test that different variants are clickable
     await page.getByRole("button", { name: /^primary$/i }).click();
     await page.getByRole("button", { name: /^secondary$/i }).click();
@@ -103,6 +124,11 @@ test.describe("Components Page", () => {
 
   test("should display modal size variants", async ({ page }) => {
     const modalsSection = page.locator("#modals");
+
+    // Click on Examples tab to see modal size variants
+    await modalsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
     // Check that different size modal triggers exist in modals section
     await expect(modalsSection.getByRole("button", { name: "Small" })).toBeVisible();
     await expect(modalsSection.getByRole("button", { name: "Medium" })).toBeVisible();
@@ -117,6 +143,12 @@ test.describe("Components Page", () => {
 
     // Verify page is still functional
     await expect(page.locator("h1").first()).toBeVisible();
+
+    // Click on Examples tab to see modal examples
+    const modalsSection = page.locator("#modals");
+    await modalsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
     await expect(page.getByRole("button", { name: /open modal/i })).toBeVisible();
 
     // Open modal in dark mode
@@ -164,5 +196,93 @@ test.describe("Components Page", () => {
     await page.getByRole("link", { name: /contact form/i }).click();
     await page.waitForTimeout(500);
     await expect(page).toHaveURL("/form");
+  });
+
+  test("should switch between tabs", async ({ page }) => {
+    const buttonsSection = page.locator("#buttons");
+
+    // Default tab should be playground
+    const playgroundTab = buttonsSection.getByRole("tab", { name: /playground/i });
+    const examplesTab = buttonsSection.getByRole("tab", { name: /examples/i });
+
+    await expect(playgroundTab).toHaveAttribute("aria-selected", "true");
+    await expect(examplesTab).toHaveAttribute("aria-selected", "false");
+
+    // Click examples tab
+    await examplesTab.click();
+    await page.waitForTimeout(300);
+
+    // Examples tab should now be selected
+    await expect(playgroundTab).toHaveAttribute("aria-selected", "false");
+    await expect(examplesTab).toHaveAttribute("aria-selected", "true");
+
+    // Click playground tab to switch back
+    await playgroundTab.click();
+    await page.waitForTimeout(300);
+
+    // Playground tab should be selected again
+    await expect(playgroundTab).toHaveAttribute("aria-selected", "true");
+    await expect(examplesTab).toHaveAttribute("aria-selected", "false");
+  });
+
+  test("should have independent tabs for each section", async ({ page }) => {
+    const buttonsSection = page.locator("#buttons");
+    const modalsSection = page.locator("#modals");
+
+    // Click examples tab in buttons section
+    await buttonsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
+    // Buttons should show examples
+    await expect(buttonsSection.getByRole("tab", { name: /examples/i })).toHaveAttribute("aria-selected", "true");
+
+    // Modals should still show playground (default)
+    await expect(modalsSection.getByRole("tab", { name: /playground/i })).toHaveAttribute("aria-selected", "true");
+
+    // Click examples tab in modals section
+    await modalsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
+    // Both sections should now show examples
+    await expect(buttonsSection.getByRole("tab", { name: /examples/i })).toHaveAttribute("aria-selected", "true");
+    await expect(modalsSection.getByRole("tab", { name: /examples/i })).toHaveAttribute("aria-selected", "true");
+  });
+
+  test("should display tabs component section", async ({ page }) => {
+    const tabsSection = page.locator("#tabs");
+    await expect(tabsSection).toBeVisible();
+
+    // Click on Examples tab to see tabs examples
+    await tabsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
+    // Check that basic tabs example is visible
+    await expect(tabsSection.getByRole("tab", { name: /overview/i })).toBeVisible();
+    await expect(tabsSection.getByRole("tab", { name: /details/i })).toBeVisible();
+
+    // Check that tabs with icons example is visible
+    await expect(tabsSection.getByRole("tab", { name: /files/i })).toBeVisible();
+    await expect(tabsSection.getByRole("tab", { name: /images/i })).toBeVisible();
+
+    // Verify features list is present
+    await expect(tabsSection.getByText(/Full ARIA accessibility/i)).toBeVisible();
+  });
+
+  test("should interact with tabs examples", async ({ page }) => {
+    const tabsSection = page.locator("#tabs");
+
+    // Navigate to examples tab
+    await tabsSection.getByRole("tab", { name: /examples/i }).click();
+    await page.waitForTimeout(300);
+
+    // Test basic tabs example - click on Details tab
+    const basicTabsContainer = tabsSection.locator("div").filter({ hasText: /Basic Tabs/ }).first();
+    const detailsTab = basicTabsContainer.getByRole("tab", { name: /^details$/i });
+    await detailsTab.click();
+    await page.waitForTimeout(300);
+
+    // Verify Details tab is selected
+    await expect(detailsTab).toHaveAttribute("aria-selected", "true");
+    await expect(basicTabsContainer.getByText(/Detailed information/i)).toBeVisible();
   });
 });

@@ -11,7 +11,9 @@
     "buttons": "Buttons",
     "buttonsDesc": "Button component with multiple variants and sizes",
     "modals": "Modals",
-    "modalsDesc": "Modal dialogs for displaying content"
+    "modalsDesc": "Modal dialogs for displaying content",
+    "tabs": "Tabs",
+    "tabsDesc": "Accessible tab navigation component with icon support"
   },
   "form": {
     "title": "Contact Form",
