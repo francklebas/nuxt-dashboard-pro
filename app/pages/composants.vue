@@ -519,15 +519,13 @@ onUnmounted(() => {
                   <div class="border-t border-border bg-muted/30 p-6">
                     <div class="flex items-center justify-between mb-3">
                       <h4 class="text-sm font-semibold text-foreground">Usage Example</h4>
-                      <DpTooltip :content="copiedTabs ? $t('components.copied') : $t('components.copy')">
-                        <button
-                          @click="copyTabsCode"
-                          class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
-                        >
-                          <Icon :name="copiedTabs ? 'lucide:check' : 'lucide:copy'" class="w-4 h-4" />
-                          {{ copiedTabs ? $t('components.copied') : $t('components.copy') }}
-                        </button>
-                      </DpTooltip>
+                      <button
+                        @click="copyTabsCode"
+                        class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+                      >
+                        <Icon :name="copiedTabs ? 'lucide:check' : 'lucide:copy'" class="w-4 h-4" />
+                        {{ copiedTabs ? $t('components.copied') : $t('components.copy') }}
+                      </button>
                     </div>
 
                     <pre class="p-4 bg-background border border-border rounded-md overflow-x-auto text-sm"><code class="text-foreground font-mono">&lt;script setup&gt;
@@ -691,15 +689,13 @@ const tabs = [
                   <div class="border-t border-border bg-muted/30 p-6">
                     <div class="flex items-center justify-between mb-3">
                       <h4 class="text-sm font-semibold text-foreground">Usage Example</h4>
-                      <DpTooltip :content="copiedTooltip ? $t('components.copied') : $t('components.copy')">
-                        <button
-                          @click="copyTooltipCode"
-                          class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
-                        >
-                          <Icon :name="copiedTooltip ? 'lucide:check' : 'lucide:copy'" class="w-4 h-4" />
-                          {{ copiedTooltip ? $t('components.copied') : $t('components.copy') }}
-                        </button>
-                      </DpTooltip>
+                      <button
+                        @click="copyTooltipCode"
+                        class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+                      >
+                        <Icon :name="copiedTooltip ? 'lucide:check' : 'lucide:copy'" class="w-4 h-4" />
+                        {{ copiedTooltip ? $t('components.copied') : $t('components.copy') }}
+                      </button>
                     </div>
 
                     <pre class="p-4 bg-background border border-border rounded-md overflow-x-auto text-sm"><code class="text-foreground font-mono">&lt;DpTooltip content="Helpful information" side="top"&gt;
