@@ -15,7 +15,9 @@
     "tabs": "Tabs",
     "tabsDesc": "Accessible tab navigation component with icon support",
     "tooltips": "Tooltips",
-    "tooltipsDesc": "Contextual information on hover or focus with flexible positioning"
+    "tooltipsDesc": "Contextual information on hover or focus with flexible positioning",
+    "copy": "Copy",
+    "copied": "Copied!"
   },
   "form": {
     "title": "Contact Form",

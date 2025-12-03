@@ -15,7 +15,9 @@
     "tabs": "Onglets",
     "tabsDesc": "Composant de navigation par onglets accessible avec support d'icônes",
     "tooltips": "Infobulles",
-    "tooltipsDesc": "Information contextuelle au survol ou au focus avec positionnement flexible"
+    "tooltipsDesc": "Information contextuelle au survol ou au focus avec positionnement flexible",
+    "copy": "Copier",
+    "copied": "Copié !"
   },
   "form": {
     "title": "Formulaire de contact",

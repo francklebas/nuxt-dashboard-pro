@@ -49,6 +49,10 @@ const componentTabs: DpTab[] = [
 // Modal state for demo
 const demoModalOpen = ref(false);
 
+// Copy feedback state
+const copiedTabs = ref(false);
+const copiedTooltip = ref(false);
+
 // Button playground controls
 const buttonControls: PlaygroundControl[] = [
   {
@@ -149,22 +153,24 @@ const tabs = [
 ];
 <\/script>
 
-<template>
-  <DpTabs :tabs="tabs" default-tab="tab1">
-    <template #tab1>
-      <div>Home content</div>
-    </template>
-    <template #tab2>
-      <div>Settings content</div>
-    </template>
-    <template #tab3>
-      <div>User content</div>
-    </template>
-  </DpTabs>
-</template>`;
+<DpTabs :tabs="tabs" default-tab="tab1">
+  <template #tab1>
+    <div>Home content</div>
+  </template>
+  <template #tab2>
+    <div>Settings content</div>
+  </template>
+  <template #tab3>
+    <div>User content</div>
+  </template>
+</DpTabs>`;
 
   try {
     await navigator.clipboard.writeText(code);
+    copiedTabs.value = true;
+    setTimeout(() => {
+      copiedTabs.value = false;
+    }, 2000);
   } catch (err) {
     console.error("Failed to copy code:", err);
   }
@@ -172,14 +178,16 @@ const tabs = [
 
 // Copy tooltip code to clipboard
 const copyTooltipCode = async () => {
-  const code = `<template>
-  <DpTooltip content="Helpful information" side="top">
-    <DpButton>Hover me</DpButton>
-  </DpTooltip>
-</template>`;
+  const code = `<DpTooltip content="Helpful information" side="top">
+  <DpButton>Hover me</DpButton>
+</DpTooltip>`;
 
   try {
     await navigator.clipboard.writeText(code);
+    copiedTooltip.value = true;
+    setTimeout(() => {
+      copiedTooltip.value = false;
+    }, 2000);
   } catch (err) {
     console.error("Failed to copy code:", err);
   }
@@ -511,13 +519,15 @@ onUnmounted(() => {
                   <div class="border-t border-border bg-muted/30 p-6">
                     <div class="flex items-center justify-between mb-3">
                       <h4 class="text-sm font-semibold text-foreground">Usage Example</h4>
-                      <button
-                        @click="copyTabsCode"
-                        class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
-                      >
-                        <Icon name="lucide:copy" class="w-4 h-4" />
-                        Copy
-                      </button>
+                      <DpTooltip :content="copiedTabs ? $t('components.copied') : $t('components.copy')">
+                        <button
+                          @click="copyTabsCode"
+                          class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+                        >
+                          <Icon :name="copiedTabs ? 'lucide:check' : 'lucide:copy'" class="w-4 h-4" />
+                          {{ copiedTabs ? $t('components.copied') : $t('components.copy') }}
+                        </button>
+                      </DpTooltip>
                     </div>
 
                     <pre class="p-4 bg-background border border-border rounded-md overflow-x-auto text-sm"><code class="text-foreground font-mono">&lt;script setup&gt;
@@ -528,19 +538,17 @@ const tabs = [
 ];
 &lt;/script&gt;
 
-&lt;template&gt;
-  &lt;DpTabs :tabs="tabs" default-tab="tab1"&gt;
-    &lt;template #tab1&gt;
-      &lt;div&gt;Home content&lt;/div&gt;
-    &lt;/template&gt;
-    &lt;template #tab2&gt;
-      &lt;div&gt;Settings content&lt;/div&gt;
-    &lt;/template&gt;
-    &lt;template #tab3&gt;
-      &lt;div&gt;User content&lt;/div&gt;
-    &lt;/template&gt;
-  &lt;/DpTabs&gt;
-&lt;/template&gt;</code></pre>
+&lt;DpTabs :tabs="tabs" default-tab="tab1"&gt;
+  &lt;template #tab1&gt;
+    &lt;div&gt;Home content&lt;/div&gt;
+  &lt;/template&gt;
+  &lt;template #tab2&gt;
+    &lt;div&gt;Settings content&lt;/div&gt;
+  &lt;/template&gt;
+  &lt;template #tab3&gt;
+    &lt;div&gt;User content&lt;/div&gt;
+  &lt;/template&gt;
+&lt;/DpTabs&gt;</code></pre>
                   </div>
                 </div>
               </template>
@@ -683,20 +691,20 @@ const tabs = [
                   <div class="border-t border-border bg-muted/30 p-6">
                     <div class="flex items-center justify-between mb-3">
                       <h4 class="text-sm font-semibold text-foreground">Usage Example</h4>
-                      <button
-                        @click="copyTooltipCode"
-                        class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
-                      >
-                        <Icon name="lucide:copy" class="w-4 h-4" />
-                        Copy
-                      </button>
+                      <DpTooltip :content="copiedTooltip ? $t('components.copied') : $t('components.copy')">
+                        <button
+                          @click="copyTooltipCode"
+                          class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+                        >
+                          <Icon :name="copiedTooltip ? 'lucide:check' : 'lucide:copy'" class="w-4 h-4" />
+                          {{ copiedTooltip ? $t('components.copied') : $t('components.copy') }}
+                        </button>
+                      </DpTooltip>
                     </div>
 
-                    <pre class="p-4 bg-background border border-border rounded-md overflow-x-auto text-sm"><code class="text-foreground font-mono">&lt;template&gt;
-  &lt;DpTooltip content="Helpful information" side="top"&gt;
-    &lt;DpButton&gt;Hover me&lt;/DpButton&gt;
-  &lt;/DpTooltip&gt;
-&lt;/template&gt;</code></pre>
+                    <pre class="p-4 bg-background border border-border rounded-md overflow-x-auto text-sm"><code class="text-foreground font-mono">&lt;DpTooltip content="Helpful information" side="top"&gt;
+  &lt;DpButton&gt;Hover me&lt;/DpButton&gt;
+&lt;/DpTooltip&gt;</code></pre>
                   </div>
                 </div>
               </template>
