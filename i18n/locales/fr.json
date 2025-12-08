@@ -3,7 +3,8 @@
   "nav": {
     "home": "Accueil",
     "form": "Formulaire de contact",
-    "components": "Composants"
+    "components": "Composants",
+    "pricing": "Tarifs"
   },
   "components": {
     "title": "Bibliothèque de composants",
@@ -36,5 +37,54 @@
     "error": "Une erreur s'est produite. Veuillez réessayer.",
     "required": "Ce champ est requis",
     "invalidEmail": "Veuillez entrer une adresse e-mail valide"
+  },
+  "pricing": {
+    "title": "Tarifs qui évoluent avec la taille de votre équipe",
+    "subtitle": "Choisissez le plan parfait pour vos besoins. Tous les plans incluent 14 jours d'essai gratuit.",
+    "period": "mois",
+    "popularBadge": "Le plus populaire",
+    "footer": "Tous les plans incluent un support 24/7 et une garantie satisfait ou remboursé de 30 jours.",
+    "starter": {
+      "title": "Starter",
+      "description": "Parfait pour les petites équipes et les startups",
+      "cta": "Commencer",
+      "features": {
+        "users": "Jusqu'à 5 membres",
+        "projects": "10 projets",
+        "storage": "5Go de stockage",
+        "support": "Support par e-mail",
+        "analytics": "Analyses avancées",
+        "api": "Accès API",
+        "customDomain": "Domaine personnalisé"
+      }
+    },
+    "professional": {
+      "title": "Professionnel",
+      "description": "Idéal pour les entreprises en croissance",
+      "cta": "Commencer l'essai gratuit",
+      "features": {
+        "users": "Jusqu'à 25 membres",
+        "projects": "Projets illimités",
+        "storage": "50Go de stockage",
+        "support": "Support prioritaire",
+        "analytics": "Analyses avancées",
+        "api": "Accès API complet",
+        "customDomain": "Domaine personnalisé"
+      }
+    },
+    "enterprise": {
+      "title": "Entreprise",
+      "description": "Pour les grandes organisations",
+      "cta": "Contacter les ventes",
+      "features": {
+        "users": "Membres illimités",
+        "projects": "Projets illimités",
+        "storage": "Stockage illimité",
+        "support": "Support dédié 24/7",
+        "analytics": "Analyses avancées",
+        "api": "Accès API complet",
+        "customDomain": "Domaine personnalisé + SSL"
+      }
+    }
   }
 }

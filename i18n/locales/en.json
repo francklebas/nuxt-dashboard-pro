@@ -3,7 +3,8 @@
   "nav": {
     "home": "Home",
     "form": "Contact Form",
-    "components": "Components"
+    "components": "Components",
+    "pricing": "Pricing"
   },
   "components": {
     "title": "Component Library",
@@ -36,5 +37,54 @@
     "error": "An error occurred. Please try again.",
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email address"
+  },
+  "pricing": {
+    "title": "Pricing that grows with your team size",
+    "subtitle": "Choose the perfect plan for your needs. All plans include a 14-day free trial.",
+    "period": "month",
+    "popularBadge": "Most Popular",
+    "footer": "All plans include 24/7 support and a 30-day money-back guarantee.",
+    "starter": {
+      "title": "Starter",
+      "description": "Perfect for small teams and startups",
+      "cta": "Get Started",
+      "features": {
+        "users": "Up to 5 team members",
+        "projects": "10 projects",
+        "storage": "5GB storage",
+        "support": "Email support",
+        "analytics": "Advanced analytics",
+        "api": "API access",
+        "customDomain": "Custom domain"
+      }
+    },
+    "professional": {
+      "title": "Professional",
+      "description": "Best for growing businesses",
+      "cta": "Start Free Trial",
+      "features": {
+        "users": "Up to 25 team members",
+        "projects": "Unlimited projects",
+        "storage": "50GB storage",
+        "support": "Priority support",
+        "analytics": "Advanced analytics",
+        "api": "Full API access",
+        "customDomain": "Custom domain"
+      }
+    },
+    "enterprise": {
+      "title": "Enterprise",
+      "description": "For large organizations",
+      "cta": "Contact Sales",
+      "features": {
+        "users": "Unlimited team members",
+        "projects": "Unlimited projects",
+        "storage": "Unlimited storage",
+        "support": "24/7 dedicated support",
+        "analytics": "Advanced analytics",
+        "api": "Full API access",
+        "customDomain": "Custom domain + SSL"
+      }
+    }
   }
 }

@@ -33,6 +33,13 @@ const { locale, locales, setLocale } = useI18n();
               {{ $t("nav.components") }}
             </NuxtLink>
             <NuxtLink
+              to="/pricing"
+              class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
+            >
+              {{ $t("nav.pricing") }}
+            </NuxtLink>
+            <NuxtLink
               to="/form"
               class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
               active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
