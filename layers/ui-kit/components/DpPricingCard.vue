@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import DpCard from "./DpCard.vue";
 import DpBadge from "./DpBadge.vue";
-import DpButton from "./DpButton.vue";
+import DpButton from "../DpButton.vue";
 import { Icon } from "#components";
 
 export interface PricingFeature {
@@ -40,10 +40,7 @@ const handleClick = () => {
 <template>
   <div class="relative">
     <!-- Popular badge -->
-    <div
-      v-if="popular"
-      class="absolute -top-4 left-1/2 -translate-x-1/2 z-10"
-    >
+    <div v-if="popular" class="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
       <DpBadge variant="primary" size="md">
         {{ badgeText }}
       </DpBadge>
@@ -55,15 +52,15 @@ const handleClick = () => {
       padding="lg"
       :hover="!popular"
       :class="[
-        'h-full flex flex-col',
+        'flex h-full flex-col',
         popular
-          ? 'border-primary shadow-xl scale-105 bg-gradient-to-b from-background to-muted/20'
+          ? 'border-primary scale-105 bg-gradient-to-b from-background to-muted/20 shadow-xl'
           : 'hover:border-primary/50',
       ]"
     >
       <!-- Header -->
       <div class="mb-6">
-        <h3 class="text-2xl font-bold text-foreground mb-2">{{ title }}</h3>
+        <h3 class="mb-2 text-2xl font-bold text-foreground">{{ title }}</h3>
         <p class="text-sm text-muted-foreground">{{ description }}</p>
       </div>
 
@@ -88,7 +85,7 @@ const handleClick = () => {
       </div>
 
       <!-- Features list -->
-      <div class="space-y-4 flex-1">
+      <div class="flex-1 space-y-4">
         <div
           v-for="(feature, index) in features"
           :key="index"
@@ -96,11 +93,9 @@ const handleClick = () => {
         >
           <Icon
             :name="feature.included ? 'lucide:check' : 'lucide:x'"
-            class="w-5 h-5 mt-0.5 flex-shrink-0"
+            class="mt-0.5 h-5 w-5 flex-shrink-0"
             :class="
-              feature.included
-                ? 'text-green-500'
-                : 'text-muted-foreground/50'
+              feature.included ? 'text-green-500' : 'text-muted-foreground/50'
             "
           />
           <span

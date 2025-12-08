@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import DpPricingCard from "@ui/DpPricingCard.vue";
-import type { PricingFeature } from "@ui/DpPricingCard.vue";
+import DpPricingCard from "@ui/components/DpPricingCard.vue";
+import type { PricingFeature } from "@ui/components/DpPricingCard.vue";
 
 const { t } = useI18n();
 
