@@ -1,17 +1,10 @@
 # Netlify configuration for Nuxt 4 with Nitro
 [build]
   command = "npm run build"
-  publish = ".output/public"
-  functions = ".netlify/functions-internal"
+  # No publish directory needed - Netlify preset handles everything
 
 [build.environment]
   NODE_VERSION = "20"
-
-# Redirect all requests to the Nuxt SSR handler
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
 
 # Security and performance headers
 [[headers]]
