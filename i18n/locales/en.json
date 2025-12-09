@@ -86,5 +86,115 @@
         "customDomain": "Priority support & updates"
       }
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Welcome back! Please enter your details.",
+      "email": "Email",
+      "emailPlaceholder": "your.email{'@'}example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "submitting": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "register": "Sign up",
+      "orContinueWith": "Or continue with",
+      "success": "Login successful! Redirecting...",
+      "errors": {
+        "invalidCredentials": "Invalid email or password",
+        "emailNotVerified": "Please verify your email address",
+        "accountLocked": "Your account has been locked"
+      }
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "passwordNoUppercase": "Password must contain at least one uppercase letter",
+      "passwordNoLowercase": "Password must contain at least one lowercase letter",
+      "passwordNoNumber": "Password must contain at least one number",
+      "passwordMismatch": "Passwords do not match"
+    },
+    "oauth": {
+      "google": "Continue with Google",
+      "github": "Continue with GitHub",
+      "gitlab": "Continue with GitLab",
+      "facebook": "Continue with Facebook",
+      "twitter": "Continue with Twitter"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Get started with your free account.",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email",
+      "emailPlaceholder": "your.email{'@'}example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Create a strong password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "terms": "I agree to the {0} and {1}",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "submit": "Create Account",
+      "submitting": "Creating account...",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in",
+      "orContinueWith": "Or sign up with",
+      "success": "Account created! Please check your email to verify your account.",
+      "errors": {
+        "emailExists": "This email is already registered",
+        "weakPassword": "Password is too weak",
+        "passwordMismatch": "Passwords do not match",
+        "termsNotAccepted": "You must accept the terms and conditions"
+      },
+      "passwordStrength": {
+        "weak": "Weak",
+        "medium": "Medium",
+        "strong": "Strong"
+      }
+    },
+    "verifyEmail": {
+      "title": "Verify Email",
+      "verifying": "Verifying your email...",
+      "success": "Email verified successfully!",
+      "successMessage": "Your email has been verified. You can now log in.",
+      "redirecting": "Redirecting to login in {0} seconds...",
+      "error": "Verification failed",
+      "errorMessage": "The verification link is invalid or has expired.",
+      "resend": "Resend verification email",
+      "resending": "Sending...",
+      "resendSuccess": "Verification email sent! Please check your inbox."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email and we'll send you reset instructions.",
+      "email": "Email",
+      "emailPlaceholder": "your.email{'@'}example.com",
+      "submit": "Send Reset Link",
+      "submitting": "Sending...",
+      "backToLogin": "Back to login",
+      "success": "If an account exists with this email, you will receive a password reset link.",
+      "checkEmail": "Check your email for reset instructions"
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your new password below.",
+      "password": "New Password",
+      "passwordPlaceholder": "Create a new password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "submit": "Reset Password",
+      "submitting": "Resetting...",
+      "success": "Password reset successful! You can now log in.",
+      "redirecting": "Redirecting to login...",
+      "errors": {
+        "invalidToken": "Invalid or expired reset link",
+        "passwordMismatch": "Passwords do not match"
+      }
+    }
   }
 }

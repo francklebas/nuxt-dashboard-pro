@@ -2,6 +2,7 @@
 import DpThemeToggle from "./DpThemeToggle.vue";
 
 const { locale, locales, setLocale } = useI18n();
+const { isAuthenticated, user, logout } = useAuth();
 </script>
 
 <template>
@@ -70,6 +71,33 @@ const { locale, locales, setLocale } = useI18n();
 
           <!-- Theme toggle -->
           <DpThemeToggle />
+
+          <!-- Auth section -->
+          <div v-if="!isAuthenticated" class="flex items-center gap-2">
+            <NuxtLink
+              to="/auth/login"
+              class="px-4 py-2 text-sm font-medium text-foreground hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              {{ $t('auth.login.title') }}
+            </NuxtLink>
+            <NuxtLink
+              to="/auth/register"
+              class="px-4 py-2 rounded-md text-sm font-medium bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 transition-colors"
+            >
+              {{ $t('auth.register.title') }}
+            </NuxtLink>
+          </div>
+          <div v-else class="flex items-center gap-3">
+            <span class="text-sm text-muted-foreground">
+              {{ user?.name || user?.email }}
+            </span>
+            <button
+              @click="logout"
+              class="px-4 py-2 rounded-md text-sm font-medium text-foreground hover:bg-muted transition-colors"
+            >
+              Logout
+            </button>
+          </div>
         </div>
       </div>
     </div>

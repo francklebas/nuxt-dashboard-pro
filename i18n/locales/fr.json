@@ -86,5 +86,115 @@
         "customDomain": "Support et mises à jour prioritaires"
       }
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "subtitle": "Bon retour ! Veuillez entrer vos identifiants.",
+      "email": "E-mail",
+      "emailPlaceholder": "votre.email{'@'}exemple.com",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "submitting": "Connexion...",
+      "noAccount": "Pas encore de compte ?",
+      "register": "S'inscrire",
+      "orContinueWith": "Ou continuer avec",
+      "success": "Connexion réussie ! Redirection...",
+      "errors": {
+        "invalidCredentials": "E-mail ou mot de passe invalide",
+        "emailNotVerified": "Veuillez vérifier votre adresse e-mail",
+        "accountLocked": "Votre compte a été verrouillé"
+      }
+    },
+    "validation": {
+      "required": "Ce champ est requis",
+      "invalidEmail": "Veuillez entrer une adresse e-mail valide",
+      "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
+      "passwordNoUppercase": "Le mot de passe doit contenir au moins une lettre majuscule",
+      "passwordNoLowercase": "Le mot de passe doit contenir au moins une lettre minuscule",
+      "passwordNoNumber": "Le mot de passe doit contenir au moins un chiffre",
+      "passwordMismatch": "Les mots de passe ne correspondent pas"
+    },
+    "oauth": {
+      "google": "Continuer avec Google",
+      "github": "Continuer avec GitHub",
+      "gitlab": "Continuer avec GitLab",
+      "facebook": "Continuer avec Facebook",
+      "twitter": "Continuer avec Twitter"
+    },
+    "register": {
+      "title": "Créer un compte",
+      "subtitle": "Commencez avec votre compte gratuit.",
+      "name": "Nom complet",
+      "namePlaceholder": "Entrez votre nom complet",
+      "email": "E-mail",
+      "emailPlaceholder": "votre.email{'@'}exemple.com",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Créez un mot de passe fort",
+      "confirmPassword": "Confirmer le mot de passe",
+      "confirmPasswordPlaceholder": "Ressaisissez votre mot de passe",
+      "terms": "J'accepte les {0} et la {1}",
+      "termsOfService": "Conditions d'utilisation",
+      "privacyPolicy": "Politique de confidentialité",
+      "submit": "Créer un compte",
+      "submitting": "Création du compte...",
+      "hasAccount": "Vous avez déjà un compte ?",
+      "login": "Se connecter",
+      "orContinueWith": "Ou s'inscrire avec",
+      "success": "Compte créé ! Veuillez vérifier votre e-mail pour activer votre compte.",
+      "errors": {
+        "emailExists": "Cet e-mail est déjà enregistré",
+        "weakPassword": "Le mot de passe est trop faible",
+        "passwordMismatch": "Les mots de passe ne correspondent pas",
+        "termsNotAccepted": "Vous devez accepter les conditions d'utilisation"
+      },
+      "passwordStrength": {
+        "weak": "Faible",
+        "medium": "Moyen",
+        "strong": "Fort"
+      }
+    },
+    "verifyEmail": {
+      "title": "Vérifier l'e-mail",
+      "verifying": "Vérification de votre e-mail...",
+      "success": "E-mail vérifié avec succès !",
+      "successMessage": "Votre e-mail a été vérifié. Vous pouvez maintenant vous connecter.",
+      "redirecting": "Redirection vers la connexion dans {0} secondes...",
+      "error": "Échec de la vérification",
+      "errorMessage": "Le lien de vérification est invalide ou a expiré.",
+      "resend": "Renvoyer l'e-mail de vérification",
+      "resending": "Envoi...",
+      "resendSuccess": "E-mail de vérification envoyé ! Veuillez vérifier votre boîte de réception."
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié",
+      "subtitle": "Entrez votre e-mail et nous vous enverrons les instructions.",
+      "email": "E-mail",
+      "emailPlaceholder": "votre.email{'@'}exemple.com",
+      "submit": "Envoyer le lien",
+      "submitting": "Envoi...",
+      "backToLogin": "Retour à la connexion",
+      "success": "Si un compte existe avec cet e-mail, vous recevrez un lien de réinitialisation.",
+      "checkEmail": "Vérifiez votre e-mail pour les instructions"
+    },
+    "resetPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Entrez votre nouveau mot de passe ci-dessous.",
+      "password": "Nouveau mot de passe",
+      "passwordPlaceholder": "Créez un nouveau mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "confirmPasswordPlaceholder": "Ressaisissez votre mot de passe",
+      "submit": "Réinitialiser",
+      "submitting": "Réinitialisation...",
+      "success": "Mot de passe réinitialisé ! Vous pouvez maintenant vous connecter.",
+      "redirecting": "Redirection vers la connexion...",
+      "errors": {
+        "invalidToken": "Lien de réinitialisation invalide ou expiré",
+        "passwordMismatch": "Les mots de passe ne correspondent pas"
+      }
+    }
   }
 }
