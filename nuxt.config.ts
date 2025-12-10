@@ -32,7 +32,15 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
+    "nuxt-echarts",
   ],
+
+  // ECharts configuration
+  echarts: {
+    renderer: "canvas",
+    charts: ["LineChart"],
+    components: ["GridComponent", "TooltipComponent", "LegendComponent"],
+  },
 
   extends: [
     "./layers/content",

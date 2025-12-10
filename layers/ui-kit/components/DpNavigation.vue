@@ -27,6 +27,13 @@ const { isAuthenticated, user, logout } = useAuth();
               {{ $t("nav.home") }}
             </NuxtLink>
             <NuxtLink
+              to="/dashboard"
+              class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
+            >
+              {{ $t("nav.dashboard") }}
+            </NuxtLink>
+            <NuxtLink
               to="/composants"
               class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
               active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
@@ -95,7 +102,7 @@ const { isAuthenticated, user, logout } = useAuth();
               @click="logout"
               class="px-4 py-2 rounded-md text-sm font-medium text-foreground hover:bg-muted transition-colors"
             >
-              Logout
+              {{ $t('nav.logout') }}
             </button>
           </div>
         </div>

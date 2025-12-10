@@ -2,9 +2,11 @@
   "welcome": "Welcome",
   "nav": {
     "home": "Home",
+    "dashboard": "Dashboard",
     "form": "Contact Form",
     "components": "Components",
-    "pricing": "Pricing"
+    "pricing": "Pricing",
+    "logout": "Logout"
   },
   "components": {
     "title": "Component Library",
@@ -92,7 +94,7 @@
       "title": "Sign In",
       "subtitle": "Welcome back! Please enter your details.",
       "email": "Email",
-      "emailPlaceholder": "your.email{'@'}example.com",
+      "emailPlaceholder": "Enter your email",
       "password": "Password",
       "passwordPlaceholder": "Enter your password",
       "rememberMe": "Remember me",
@@ -131,7 +133,7 @@
       "name": "Full Name",
       "namePlaceholder": "Enter your full name",
       "email": "Email",
-      "emailPlaceholder": "your.email{'@'}example.com",
+      "emailPlaceholder": "Enter your email",
       "password": "Password",
       "passwordPlaceholder": "Create a strong password",
       "confirmPassword": "Confirm Password",
@@ -173,7 +175,7 @@
       "title": "Forgot Password",
       "subtitle": "Enter your email and we'll send you reset instructions.",
       "email": "Email",
-      "emailPlaceholder": "your.email{'@'}example.com",
+      "emailPlaceholder": "Enter your email",
       "submit": "Send Reset Link",
       "submitting": "Sending...",
       "backToLogin": "Back to login",
@@ -195,6 +197,55 @@
         "invalidToken": "Invalid or expired reset link",
         "passwordMismatch": "Passwords do not match"
       }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}!",
+    "welcomeGuest": "Welcome to your Dashboard",
+    "overview": "Overview",
+    "stats": {
+      "totalUsers": "Total Users",
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "conversion": "Conversion Rate",
+      "growth": "Growth",
+      "visitors": "Visitors",
+      "avgSessionTime": "Avg. Session Time"
+    },
+    "charts": {
+      "title": "Performance Trends",
+      "description": "View your key metrics over time",
+      "revenue": "Revenue",
+      "users": "Users",
+      "orders": "Orders",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "empty": "No recent activity",
+      "viewAll": "View all activity"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "newUser": "New User",
+      "newUserDesc": "Create a new user account",
+      "viewReports": "View Reports",
+      "viewReportsDesc": "Access analytics reports",
+      "settings": "Settings",
+      "settingsDesc": "Manage application settings",
+      "exportData": "Export Data",
+      "exportDataDesc": "Download your data"
+    },
+    "metrics": {
+      "vsLastMonth": "vs last month",
+      "vsLastWeek": "vs last week",
+      "thisMonth": "this month",
+      "thisWeek": "this week",
+      "today": "today"
     }
   }
 }

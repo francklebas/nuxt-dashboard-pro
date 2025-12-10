@@ -2,9 +2,11 @@
   "welcome": "Bienvenue",
   "nav": {
     "home": "Accueil",
+    "dashboard": "Tableau de bord",
     "form": "Formulaire de contact",
     "components": "Composants",
-    "pricing": "Tarifs"
+    "pricing": "Tarifs",
+    "logout": "Déconnexion"
   },
   "components": {
     "title": "Bibliothèque de composants",
@@ -28,7 +30,7 @@
     "lastName": "Nom",
     "lastNamePlaceholder": "Entrez votre nom",
     "email": "Adresse e-mail",
-    "emailPlaceholder": "votre.email{'@'}exemple.com",
+    "emailPlaceholder": "Entrez votre email",
     "message": "Message",
     "messagePlaceholder": "Tapez votre message ici...",
     "submit": "Envoyer le message",
@@ -92,7 +94,7 @@
       "title": "Connexion",
       "subtitle": "Bon retour ! Veuillez entrer vos identifiants.",
       "email": "E-mail",
-      "emailPlaceholder": "votre.email{'@'}exemple.com",
+      "emailPlaceholder": "Entrez votre email",
       "password": "Mot de passe",
       "passwordPlaceholder": "Entrez votre mot de passe",
       "rememberMe": "Se souvenir de moi",
@@ -131,7 +133,7 @@
       "name": "Nom complet",
       "namePlaceholder": "Entrez votre nom complet",
       "email": "E-mail",
-      "emailPlaceholder": "votre.email{'@'}exemple.com",
+      "emailPlaceholder": "Entrez votre email",
       "password": "Mot de passe",
       "passwordPlaceholder": "Créez un mot de passe fort",
       "confirmPassword": "Confirmer le mot de passe",
@@ -173,7 +175,7 @@
       "title": "Mot de passe oublié",
       "subtitle": "Entrez votre e-mail et nous vous enverrons les instructions.",
       "email": "E-mail",
-      "emailPlaceholder": "votre.email{'@'}exemple.com",
+      "emailPlaceholder": "Entrez votre email",
       "submit": "Envoyer le lien",
       "submitting": "Envoi...",
       "backToLogin": "Retour à la connexion",
@@ -195,6 +197,55 @@
         "invalidToken": "Lien de réinitialisation invalide ou expiré",
         "passwordMismatch": "Les mots de passe ne correspondent pas"
       }
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bon retour, {name} !",
+    "welcomeGuest": "Bienvenue sur votre tableau de bord",
+    "overview": "Vue d'ensemble",
+    "stats": {
+      "totalUsers": "Utilisateurs totaux",
+      "revenue": "Revenu",
+      "orders": "Commandes",
+      "conversion": "Taux de conversion",
+      "growth": "Croissance",
+      "visitors": "Visiteurs",
+      "avgSessionTime": "Durée moy. de session"
+    },
+    "charts": {
+      "title": "Tendances de performance",
+      "description": "Visualisez vos métriques clés dans le temps",
+      "revenue": "Revenu",
+      "users": "Utilisateurs",
+      "orders": "Commandes",
+      "daily": "Quotidien",
+      "weekly": "Hebdomadaire",
+      "monthly": "Mensuel",
+      "yearly": "Annuel"
+    },
+    "activity": {
+      "title": "Activité récente",
+      "empty": "Aucune activité récente",
+      "viewAll": "Voir toute l'activité"
+    },
+    "quickActions": {
+      "title": "Actions rapides",
+      "newUser": "Nouvel utilisateur",
+      "newUserDesc": "Créer un nouveau compte utilisateur",
+      "viewReports": "Voir les rapports",
+      "viewReportsDesc": "Accéder aux rapports analytiques",
+      "settings": "Paramètres",
+      "settingsDesc": "Gérer les paramètres de l'application",
+      "exportData": "Exporter les données",
+      "exportDataDesc": "Télécharger vos données"
+    },
+    "metrics": {
+      "vsLastMonth": "vs mois dernier",
+      "vsLastWeek": "vs semaine dernière",
+      "thisMonth": "ce mois",
+      "thisWeek": "cette semaine",
+      "today": "aujourd'hui"
     }
   }
 }
