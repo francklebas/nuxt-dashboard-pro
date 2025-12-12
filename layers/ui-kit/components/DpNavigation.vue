@@ -55,6 +55,27 @@ const { isAuthenticated } = useAuth();
             >
               {{ $t("nav.form") }}
             </NuxtLink>
+            <NuxtLink
+              to="/products"
+              class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
+            >
+              Products
+            </NuxtLink>
+            <NuxtLink
+              to="/users"
+              class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
+            >
+              Users
+            </NuxtLink>
+            <NuxtLink
+              to="/orders"
+              class="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              active-class="bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300"
+            >
+              Orders
+            </NuxtLink>
           </div>
         </div>
 

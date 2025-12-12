@@ -22,6 +22,8 @@
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.0",
     "@nuxtjs/color-mode": "^4.0.0",
+    "@supabase/supabase-js": "^2.87.1",
+    "@tanstack/vue-table": "^8.21.3",
     "@unhead/vue": "^2.0.3",
     "better-sqlite3": "^12.5.0",
     "echarts": "^6.0.0",
