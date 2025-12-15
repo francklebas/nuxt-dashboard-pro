@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import DpButton from "@ui/DpButton.vue";
 import DpModal from "@ui/components/DpModal.vue";
-import DpComponentPlayground from "@ui/components/DpComponentPlayground.vue";
-import DpTabs from "@ui/components/DpTabs.vue";
-import DpTooltip from "@ui/components/DpTooltip.vue";
+const DpComponentPlayground = defineAsyncComponent(() =>
+  import("@ui/components/DpComponentPlayground.vue")
+);
+const DpTabs = defineAsyncComponent(() =>
+  import("@ui/components/DpTabs.vue")
+);
+const DpTooltip = defineAsyncComponent(() =>
+  import("@ui/components/DpTooltip.vue")
+);
 import type { PlaygroundControl } from "@ui/components/DpComponentPlayground.vue";
 import type { DpTab } from "@ui/components/DpTabs.vue";
 

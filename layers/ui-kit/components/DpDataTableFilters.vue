@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useDebounceFn } from '@vueuse/core';
-
 interface Filter {
   key: string;
   label: string;
@@ -30,6 +28,7 @@ const emit = defineEmits<{
 const searchQuery = ref('');
 const filterValues = ref<Record<string, any>>({});
 const showFilters = ref(false);
+const debounceTimeout = ref<NodeJS.Timeout | null>(null);
 
 const activeFiltersCount = computed(() => {
   return Object.values(filterValues.value).filter(
@@ -37,9 +36,14 @@ const activeFiltersCount = computed(() => {
   ).length;
 });
 
-const handleSearch = useDebounceFn(() => {
-  emit('search', searchQuery.value);
-}, 300);
+const handleSearch = () => {
+  if (debounceTimeout.value) {
+    clearTimeout(debounceTimeout.value);
+  }
+  debounceTimeout.value = setTimeout(() => {
+    emit('search', searchQuery.value);
+  }, 300);
+};
 
 const applyFilters = () => {
   emit('filter', filterValues.value);
@@ -60,6 +64,12 @@ watch(searchQuery, () => {
 watch(filterValues, () => {
   applyFilters();
 }, { deep: true });
+
+onUnmounted(() => {
+  if (debounceTimeout.value) {
+    clearTimeout(debounceTimeout.value);
+  }
+});
 </script>
 
 <template>

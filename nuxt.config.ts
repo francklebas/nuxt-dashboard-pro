@@ -13,6 +13,77 @@ export default defineNuxtConfig({
     },
   },
 
+  // Route Rules - SWR Cache Strategy for Performance
+  routeRules: {
+    // Pages marketing - cache long
+    '/': {
+      swr: 3600, // 1 heure de cache
+      headers: { 'cache-control': 'public, max-age=3600, stale-while-revalidate=7200' }
+    },
+    '/pricing': {
+      swr: 3600,
+      headers: { 'cache-control': 'public, max-age=3600, stale-while-revalidate=7200' }
+    },
+    '/composants': {
+      swr: 1800, // 30 minutes
+      headers: { 'cache-control': 'public, max-age=1800, stale-while-revalidate=3600' }
+    },
+    '/form': {
+      swr: 1800,
+      headers: { 'cache-control': 'public, max-age=1800, stale-while-revalidate=3600' }
+    },
+
+    // Auth pages - cache moyen
+    '/auth/**': {
+      swr: 600, // 10 minutes
+      headers: { 'cache-control': 'public, max-age=600, stale-while-revalidate=1200' }
+    },
+
+    // Dashboard - cache court mais efficace
+    '/dashboard': {
+      swr: 60, // 60 secondes
+      headers: { 'cache-control': 'public, max-age=60, stale-while-revalidate=120' }
+    },
+
+    // Data tables - cache moyen
+    '/users': {
+      swr: 120,
+      headers: { 'cache-control': 'public, max-age=120, stale-while-revalidate=240' }
+    },
+    '/products': {
+      swr: 120,
+      headers: { 'cache-control': 'public, max-age=120, stale-while-revalidate=240' }
+    },
+    '/orders': {
+      swr: 120,
+      headers: { 'cache-control': 'public, max-age=120, stale-while-revalidate=240' }
+    },
+    '/settings': {
+      swr: 300,
+      headers: { 'cache-control': 'public, max-age=300, stale-while-revalidate=600' }
+    },
+
+    // API routes - cache pour mock data
+    '/api/products/**': {
+      swr: 300, // 5 minutes (données mock)
+      headers: { 'cache-control': 'public, max-age=300, stale-while-revalidate=600' }
+    },
+    '/api/orders/**': {
+      swr: 300,
+      headers: { 'cache-control': 'public, max-age=300, stale-while-revalidate=600' }
+    },
+    '/api/users/**': {
+      swr: 300,
+      headers: { 'cache-control': 'public, max-age=300, stale-while-revalidate=600' }
+    },
+
+    // Auth APIs - PAS de cache
+    '/api/auth/**': {
+      swr: false,
+      headers: { 'cache-control': 'no-store, no-cache, must-revalidate' }
+    },
+  },
+
   devtools: {
     enabled: true,
 
@@ -92,6 +163,12 @@ export default defineNuxtConfig({
   // Nitro configuration for deployment
   nitro: {
     preset: "netlify",
+    compressPublicAssets: true, // Enable Brotli/Gzip compression
+    netlify: {
+      images: {
+        remote_images: ['https://*'],
+      },
+    },
     // Externalize native modules for Netlify
     externals: {
       inline: ["better-sqlite3"],

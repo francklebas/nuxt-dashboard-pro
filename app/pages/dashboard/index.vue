@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { EChartsOption } from "echarts";
 import DpStatsCard from "@ui/components/dashboard/DpStatsCard.vue";
-import DpChart from "@ui/components/dashboard/DpChart.vue";
+const DpChart = defineAsyncComponent(() =>
+  import("@ui/components/dashboard/DpChart.vue")
+);
 import DpActivityFeed from "@ui/components/dashboard/DpActivityFeed.vue";
 import DpQuickActions from "@ui/components/dashboard/DpQuickActions.vue";
 import type { Activity } from "@ui/components/dashboard/DpActivityFeed.vue";

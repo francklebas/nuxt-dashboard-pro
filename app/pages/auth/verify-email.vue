@@ -21,6 +21,7 @@ const countdown = ref(5);
 const resendEmail = ref("");
 const resendError = ref("");
 const resendSuccess = ref(false);
+const countdownInterval = ref<NodeJS.Timeout | null>(null);
 
 // Auto-verify on mount
 onMounted(async () => {
@@ -37,10 +38,13 @@ onMounted(async () => {
     state.value = "success";
 
     // Start countdown
-    const interval = setInterval(() => {
+    countdownInterval.value = setInterval(() => {
       countdown.value--;
       if (countdown.value === 0) {
-        clearInterval(interval);
+        if (countdownInterval.value) {
+          clearInterval(countdownInterval.value);
+          countdownInterval.value = null;
+        }
         navigateTo("/auth/login");
       }
     }, 1000);
@@ -49,6 +53,14 @@ onMounted(async () => {
     state.value = "error";
     errorMessage.value = error.data?.errors?.[0]?.message ||
       t("auth.verifyEmail.errorMessage");
+  }
+});
+
+// Cleanup interval on unmount
+onUnmounted(() => {
+  if (countdownInterval.value) {
+    clearInterval(countdownInterval.value);
+    countdownInterval.value = null;
   }
 });
 
