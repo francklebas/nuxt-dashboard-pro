@@ -14,7 +14,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "Dashboard - Dashboard Pro",
+  title: "Dashboard - Business Operations Framework",
   meta: [
     {
       name: "description",

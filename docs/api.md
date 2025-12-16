@@ -1,6 +1,6 @@
 # API Documentation
 
-Cette section documente les endpoints API disponibles dans l'application Nuxt Dashboard Pro.
+Cette section documente les endpoints API disponibles dans Business Operations Framework.
 
 ## 📨 Waitlist (Liste d'attente)
 

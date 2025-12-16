@@ -3,12 +3,12 @@ import DpButton from "@ui/DpButton.vue";
 import DpModal from "@ui/components/DpModal.vue";
 
 useHead({
-  title: "Dashboard Pro - Modern Nuxt Template",
+  title: "Business Operations Framework",
   meta: [
     {
       name: "description",
       content:
-        "Professional Nuxt 4 dashboard template with Vue 3, TypeScript, and Tailwind CSS. Features dark mode, i18n, responsive design, and complete UI component library.",
+        "Business Operations Platform for Modern Teams. Streamline your workflows with powerful features.",
     },
   ],
 });
@@ -35,7 +35,7 @@ const handleFormSubmit = () => {
       <section class="text-center py-12 sm:py-16">
         <div class="max-w-3xl mx-auto">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Welcome to Dashboard Pro
+            Welcome to Business Operations Framework
           </h1>
           <p class="text-lg sm:text-xl text-muted-foreground mb-8">
             Experience our complete authentication system with modern UI components,

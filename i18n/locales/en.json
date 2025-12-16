@@ -44,8 +44,8 @@
     "invalidEmail": "Please enter a valid email address"
   },
   "pricing": {
-    "title": "Dashboard Pro Pricing",
-    "subtitle": "Professional Nuxt dashboard template built with Nuxt 4, Vue 3, and TypeScript. Choose the right plan for your needs.",
+    "title": "Business Operations Framework Pricing",
+    "subtitle": "Business Operations Platform for Modern Teams. Choose the right plan for your needs.",
     "period": "one-time",
     "popularBadge": "Recommended",
     "footer": "All licenses include lifetime updates and full source code access.",

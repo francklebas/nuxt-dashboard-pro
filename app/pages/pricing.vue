@@ -5,12 +5,12 @@ import type { PricingFeature } from "@ui/components/DpPricingCard.vue";
 const { t } = useI18n();
 
 useHead({
-  title: "Pricing - Dashboard Pro",
+  title: "Pricing - Business Operations Framework",
   meta: [
     {
       name: "description",
       content:
-        "Choose the perfect Nuxt dashboard template for your project. Two pricing options: Community (Free) and Commercial ($49). One-time purchase, lifetime updates.",
+        "Choose the perfect business operations platform for your needs. Two pricing options: Community (Free) and Commercial ($49). One-time purchase, lifetime updates.",
     },
   ],
 });

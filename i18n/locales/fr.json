@@ -44,8 +44,8 @@
     "invalidEmail": "Veuillez entrer une adresse e-mail valide"
   },
   "pricing": {
-    "title": "Tarifs Dashboard Pro",
-    "subtitle": "Template dashboard professionnel Nuxt construit avec Nuxt 4, Vue 3 et TypeScript. Choisissez le plan adapté à vos besoins.",
+    "title": "Tarifs Business Operations Framework",
+    "subtitle": "Plateforme d'opérations commerciales pour équipes modernes. Choisissez le plan adapté à vos besoins.",
     "period": "achat unique",
     "popularBadge": "Recommandé",
     "footer": "Toutes les licences incluent les mises à jour à vie et l'accès au code source complet.",

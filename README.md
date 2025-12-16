@@ -1,43 +1,36 @@
-# 🚀 Nuxt Dashboard Pro
+# 🚀 Business Operations Framework
 
-> Professional dashboard template built with Nuxt 4, Vue 3, TypeScript, and Tailwind CSS
-
-[![Nuxt 4](https://img.shields.io/badge/Nuxt-4.2-00DC82?logo=nuxt.js)](https://nuxt.com/)
-[![Vue 3](https://img.shields.io/badge/Vue-3.5-4FC08D?logo=vue.js)](https://vuejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+> Business Operations Platform for Modern Teams
 
 ## ✨ Features
 
-- 🎨 **Modern UI Components** - Buttons, Modals, Tabs, Tooltips, Cards, Badges, and more
+- 🎨 **Modern UI Components** - Comprehensive component library for business operations
 - 🌙 **Dark Mode** - Built-in dark mode support with smooth transitions
-- 🌍 **i18n Ready** - Multi-language support (English & French included)
+- 🌍 **Multi-Language** - International support (English & French included)
 - 📱 **Fully Responsive** - Mobile-first design that works on all devices
-- ⚡ **Fast & Optimized** - Built with Nuxt 4 and Vite for lightning-fast performance
-- 🎯 **TypeScript** - Full type safety across the entire codebase
-- 🧩 **Component Library** - Reusable, composable, and customizable components
-- 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-- 📦 **Modular Architecture** - Clean layer-based structure for easy maintenance
+- ⚡ **Fast & Optimized** - Lightning-fast performance for productivity
+- 🧩 **Modular Components** - Reusable, composable, and customizable components
+- 📦 **Clean Architecture** - Organized structure for easy maintenance and scalability
 
 ## 📦 What's Included
 
 ### UI Components
-- ✅ **DpButton** - Multiple variants (primary, secondary, outline, ghost) and sizes
-- ✅ **DpModal** - Accessible modal dialogs with size variants
-- ✅ **DpTabs** - Tab navigation with icon support
-- ✅ **DpTooltip** - Contextual tooltips with flexible positioning
-- ✅ **DpCard** - Versatile card component with multiple variants
-- ✅ **DpBadge** - Status badges with color variants
-- ✅ **DpPricingCard** - Pricing cards with feature lists
-- ✅ **DpWaitlistForm** - Email collection form with validation
-- ✅ **DpThemeToggle** - Dark/light mode switcher
-- ✅ **DpNavigation** - Responsive navigation bar
+- ✅ **BfButton** - Multiple variants (primary, secondary, outline, ghost) and sizes
+- ✅ **BfModal** - Accessible modal dialogs with size variants
+- ✅ **BfTabs** - Tab navigation with icon support
+- ✅ **BfTooltip** - Contextual tooltips with flexible positioning
+- ✅ **BfCard** - Versatile card component with multiple variants
+- ✅ **BfBadge** - Status badges with color variants
+- ✅ **BfPricingCard** - Pricing cards with feature lists
+- ✅ **BfWaitlistForm** - Email collection form with validation
+- ✅ **BfThemeToggle** - Dark/light mode switcher
+- ✅ **BfNavigation** - Responsive navigation bar
 
 ### Pages
-- 🏠 **Home** - Landing page with component showcase
+- 🏠 **Home** - Landing page showcasing platform capabilities
 - 📋 **Components** - Interactive component library
-- 💰 **Pricing** - Three-tier pricing page
-- 📧 **Contact Form** - Form example with validation
+- 💰 **Pricing** - Flexible pricing options
+- 📧 **Contact Form** - Professional contact forms with validation
 
 ### API Routes
 - 📨 **POST /api/waitlist** - Waitlist signup endpoint with validation
@@ -51,8 +44,8 @@
 ### Installation
 
 ```bash
-# 1. Clone or extract the template
-cd nuxt-dashboard-pro
+# 1. Clone or extract the framework
+cd nuxt-business-operations-framework
 
 # 2. Install dependencies
 npm install
@@ -61,7 +54,7 @@ npm install
 npm run dev
 ```
 
-Your dashboard will be available at `http://localhost:3000` 🎉
+Your platform will be available at `http://localhost:3000` 🎉
 
 ### Quick Customization
 
@@ -70,7 +63,7 @@ Edit `theme-config.ts`:
 ```typescript
 export const themeConfig = {
   brand: {
-    name: "Your Dashboard",  // Change this
+    name: "Your Business Platform",  // Change this
     tagline: "Your tagline",  // Change this
   },
 }
@@ -98,7 +91,7 @@ navigation: {
 ## 📁 Project Structure
 
 ```
-nuxt-dashboard-pro/
+business-operations-framework/
 ├── app/
 │   ├── assets/css/          # Global styles
 │   ├── layouts/             # Layout components
@@ -130,4 +123,4 @@ Commercial license - see LICENSE file for details.
 
 ---
 
-Made with ❤️ using [Nuxt](https://nuxt.com/)
+Made with ❤️

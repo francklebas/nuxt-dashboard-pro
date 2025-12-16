@@ -6,7 +6,7 @@ definePageMeta({
 });
 
 useHead({
-  title: "Settings - Dashboard Pro",
+  title: "Settings - Business Operations Framework",
   meta: [
     {
       name: "description",

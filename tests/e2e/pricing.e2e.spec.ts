@@ -8,7 +8,7 @@ test.describe("Pricing Page", () => {
   test("pricing page loads correctly", async ({ page }) => {
     await expect(page).toHaveTitle(/Pricing/i);
     await expect(
-      page.getByRole("heading", { name: /Dashboard Pro Pricing/i })
+      page.getByRole("heading", { name: /Business Operations Framework Pricing/i })
     ).toBeVisible();
   });
 

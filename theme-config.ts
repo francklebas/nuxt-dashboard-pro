@@ -8,8 +8,8 @@
 export const themeConfig = {
   // Brand
   brand: {
-    name: "Dashboard Pro",
-    tagline: "Professional Nuxt Dashboard Template",
+    name: "Business Operations Framework",
+    tagline: "Business Operations Platform for Modern Teams",
   },
 
   // Colors (Tailwind CSS variables defined in app/assets/css/main.css)
