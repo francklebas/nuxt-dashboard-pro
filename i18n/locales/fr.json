@@ -44,51 +44,37 @@
     "invalidEmail": "Veuillez entrer une adresse e-mail valide"
   },
   "pricing": {
-    "title": "Choisissez votre template Nuxt Dashboard",
-    "subtitle": "Templates dashboard professionnels construits avec Nuxt 4, Vue 3 et TypeScript. Commencez dès aujourd'hui.",
+    "title": "Tarifs Dashboard Pro",
+    "subtitle": "Template dashboard professionnel Nuxt construit avec Nuxt 4, Vue 3 et TypeScript. Choisissez le plan adapté à vos besoins.",
     "period": "achat unique",
-    "popularBadge": "Le plus populaire",
+    "popularBadge": "Recommandé",
     "footer": "Toutes les licences incluent les mises à jour à vie et l'accès au code source complet.",
-    "starter": {
-      "title": "Actuel",
-      "description": "Template tel quel avec quelques lacunes",
-      "cta": "Acheter maintenant",
+    "community": {
+      "title": "Community",
+      "description": "Gratuit uniquement pour les projets FOSS (logiciels libres et open-source)",
+      "cta": "Commencer",
       "features": {
-        "users": "Nuxt 4 + Vue 3 + TypeScript",
-        "projects": "Composants UI (Boutons, Modales, Onglets, Infobulles)",
-        "storage": "Exemple de formulaire basique",
-        "support": "Documentation incluse",
-        "analytics": "Support du dark mode",
-        "api": "Formulaires (à compléter)",
-        "customDomain": "Showcase des composants (en cours)"
+        "source": "Accès au code source complet",
+        "components": "Tous les composants UI",
+        "updates": "Mises à jour à vie",
+        "documentation": "Documentation complète",
+        "community": "Support communautaire",
+        "commercial": "Usage commercial",
+        "support": "Support prioritaire"
       }
     },
-    "professional": {
-      "title": "V1 Complète",
-      "description": "Toutes les lacunes corrigées, prêt pour la production",
-      "cta": "Précommander V1",
+    "commercial": {
+      "title": "Commercial",
+      "description": "Pour les projets commerciaux et entreprises",
+      "cta": "Acheter la licence",
       "features": {
-        "users": "Tout ce qui est dans Actuel",
-        "projects": "Formulaires fonctionnels avec validation",
-        "storage": "Implémentation complète du dark mode",
-        "support": "Showcase professionnel des composants",
-        "analytics": "Variantes de section Hero",
-        "api": "Templates de sections Features",
-        "customDomain": "Support par e-mail prioritaire"
-      }
-    },
-    "enterprise": {
-      "title": "V2 Premium",
-      "description": "Solution dashboard complète",
-      "cta": "Bientôt disponible",
-      "features": {
-        "users": "Tout ce qui est dans V1 Complète",
-        "projects": "Variantes Hero multiples",
-        "storage": "Page Dashboard avec graphiques",
-        "support": "Animations et transitions avancées",
-        "analytics": "Templates de pages additionnels",
-        "api": "Bibliothèque de composants premium",
-        "customDomain": "Support et mises à jour prioritaires"
+        "everything": "Tout ce qui est dans Community",
+        "commercial": "Licence d'utilisation commerciale",
+        "support": "Support e-mail prioritaire",
+        "priority": "Corrections de bugs prioritaires",
+        "updates": "Accès anticipé aux nouvelles fonctionnalités",
+        "templates": "Templates de pages additionnels",
+        "customization": "Demandes de fonctionnalités personnalisées"
       }
     }
   },

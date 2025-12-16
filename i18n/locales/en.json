@@ -44,51 +44,37 @@
     "invalidEmail": "Please enter a valid email address"
   },
   "pricing": {
-    "title": "Choose your Nuxt Dashboard Template",
-    "subtitle": "Professional dashboard templates built with Nuxt 4, Vue 3, and TypeScript. Start building today.",
+    "title": "Dashboard Pro Pricing",
+    "subtitle": "Professional Nuxt dashboard template built with Nuxt 4, Vue 3, and TypeScript. Choose the right plan for your needs.",
     "period": "one-time",
-    "popularBadge": "Most Popular",
+    "popularBadge": "Recommended",
     "footer": "All licenses include lifetime updates and full source code access.",
-    "starter": {
-      "title": "Current",
-      "description": "Template as-is with some gaps",
-      "cta": "Buy Now",
+    "community": {
+      "title": "Community",
+      "description": "Free for FOSS (Free and Open Source Software) projects only",
+      "cta": "Get Started",
       "features": {
-        "users": "Nuxt 4 + Vue 3 + TypeScript",
-        "projects": "UI Components (Buttons, Modals, Tabs, Tooltips)",
-        "storage": "Basic form example",
-        "support": "Documentation included",
-        "analytics": "Dark mode support",
-        "api": "Forms (needs completion)",
-        "customDomain": "Component showcase (in progress)"
+        "source": "Full source code access",
+        "components": "All UI components",
+        "updates": "Lifetime updates",
+        "documentation": "Complete documentation",
+        "community": "Community support",
+        "commercial": "Commercial use",
+        "support": "Priority support"
       }
     },
-    "professional": {
-      "title": "V1 Complete",
-      "description": "All gaps fixed, production-ready",
-      "cta": "Pre-order V1",
+    "commercial": {
+      "title": "Commercial",
+      "description": "For commercial projects and businesses",
+      "cta": "Buy License",
       "features": {
-        "users": "Everything in Current",
-        "projects": "Fully functional forms with validation",
-        "storage": "Complete dark mode implementation",
-        "support": "Professional component showcase",
-        "analytics": "Hero section variants",
-        "api": "Features section templates",
-        "customDomain": "Priority email support"
-      }
-    },
-    "enterprise": {
-      "title": "V2 Premium",
-      "description": "Complete dashboard solution",
-      "cta": "Coming Soon",
-      "features": {
-        "users": "Everything in V1 Complete",
-        "projects": "Multiple Hero variants",
-        "storage": "Dashboard page with charts",
-        "support": "Advanced animations & transitions",
-        "analytics": "Additional page templates",
-        "api": "Premium components library",
-        "customDomain": "Priority support & updates"
+        "everything": "Everything in Community",
+        "commercial": "Commercial use license",
+        "support": "Priority email support",
+        "priority": "Priority bug fixes",
+        "updates": "Early access to new features",
+        "templates": "Additional page templates",
+        "customization": "Custom feature requests"
       }
     }
   },

@@ -10,7 +10,7 @@ useHead({
     {
       name: "description",
       content:
-        "Choose the perfect Nuxt dashboard template for your project. Three pricing tiers available: Current ($29), V1 Complete ($49), and V2 Premium ($99). One-time purchase, lifetime updates.",
+        "Choose the perfect Nuxt dashboard template for your project. Two pricing options: Community (Free) and Commercial ($49). One-time purchase, lifetime updates.",
     },
   ],
 });
@@ -18,58 +18,40 @@ useHead({
 // Pricing plans data
 const plans = computed(() => [
   {
-    title: t("pricing.starter.title"),
-    description: t("pricing.starter.description"),
-    price: "$29",
+    title: t("pricing.community.title"),
+    description: t("pricing.community.description"),
+    price: "$0",
     period: t("pricing.period"),
-    buttonText: t("pricing.starter.cta"),
+    buttonText: t("pricing.community.cta"),
     buttonVariant: "outline" as const,
     popular: false,
     features: [
-      { text: t("pricing.starter.features.users"), included: true },
-      { text: t("pricing.starter.features.projects"), included: true },
-      { text: t("pricing.starter.features.storage"), included: true },
-      { text: t("pricing.starter.features.support"), included: true },
-      { text: t("pricing.starter.features.analytics"), included: true },
-      { text: t("pricing.starter.features.api"), included: false },
-      { text: t("pricing.starter.features.customDomain"), included: false },
+      { text: t("pricing.community.features.source"), included: true },
+      { text: t("pricing.community.features.components"), included: true },
+      { text: t("pricing.community.features.updates"), included: true },
+      { text: t("pricing.community.features.documentation"), included: true },
+      { text: t("pricing.community.features.community"), included: true },
+      { text: t("pricing.community.features.commercial"), included: false },
+      { text: t("pricing.community.features.support"), included: false },
     ] as PricingFeature[],
   },
   {
-    title: t("pricing.professional.title"),
-    description: t("pricing.professional.description"),
+    title: t("pricing.commercial.title"),
+    description: t("pricing.commercial.description"),
     price: "$49",
     period: t("pricing.period"),
-    buttonText: t("pricing.professional.cta"),
+    buttonText: t("pricing.commercial.cta"),
     buttonVariant: "primary" as const,
     popular: true,
     badgeText: t("pricing.popularBadge"),
     features: [
-      { text: t("pricing.professional.features.users"), included: true },
-      { text: t("pricing.professional.features.projects"), included: true },
-      { text: t("pricing.professional.features.storage"), included: true },
-      { text: t("pricing.professional.features.support"), included: true },
-      { text: t("pricing.professional.features.analytics"), included: true },
-      { text: t("pricing.professional.features.api"), included: true },
-      { text: t("pricing.professional.features.customDomain"), included: true },
-    ] as PricingFeature[],
-  },
-  {
-    title: t("pricing.enterprise.title"),
-    description: t("pricing.enterprise.description"),
-    price: "$99",
-    period: t("pricing.period"),
-    buttonText: t("pricing.enterprise.cta"),
-    buttonVariant: "outline" as const,
-    popular: false,
-    features: [
-      { text: t("pricing.enterprise.features.users"), included: true },
-      { text: t("pricing.enterprise.features.projects"), included: true },
-      { text: t("pricing.enterprise.features.storage"), included: true },
-      { text: t("pricing.enterprise.features.support"), included: true },
-      { text: t("pricing.enterprise.features.analytics"), included: true },
-      { text: t("pricing.enterprise.features.api"), included: true },
-      { text: t("pricing.enterprise.features.customDomain"), included: true },
+      { text: t("pricing.commercial.features.everything"), included: true },
+      { text: t("pricing.commercial.features.commercial"), included: true },
+      { text: t("pricing.commercial.features.support"), included: true },
+      { text: t("pricing.commercial.features.priority"), included: true },
+      { text: t("pricing.commercial.features.updates"), included: true },
+      { text: t("pricing.commercial.features.templates"), included: true },
+      { text: t("pricing.commercial.features.customization"), included: true },
     ] as PricingFeature[],
   },
 ]);
@@ -95,7 +77,7 @@ const handlePlanClick = (planTitle: string) => {
 
       <!-- Pricing cards grid -->
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 items-start max-w-7xl mx-auto"
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start max-w-5xl mx-auto"
       >
         <DpPricingCard
           v-for="(plan, index) in plans"
