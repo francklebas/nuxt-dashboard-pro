@@ -133,30 +133,6 @@ export default defineNuxtConfig({
           pure_funcs: ['console.log', 'console.info', 'console.debug'],
         },
       },
-      // Code splitting optimizations
-      rollupOptions: {
-        output: {
-          manualChunks: (id) => {
-            // Vendor chunk for node_modules
-            if (id.includes('node_modules')) {
-              // Separate echarts into its own chunk
-              if (id.includes('echarts') || id.includes('zrender')) {
-                return 'echarts';
-              }
-              // Separate vue/nuxt core
-              if (id.includes('vue') || id.includes('nuxt') || id.includes('@vue')) {
-                return 'vue-core';
-              }
-              // Separate reka-ui
-              if (id.includes('reka-ui')) {
-                return 'reka-ui';
-              }
-              // Other vendors
-              return 'vendor';
-            }
-          },
-        },
-      },
       // Optimize chunk size
       chunkSizeWarningLimit: 1000,
       cssCodeSplit: true,
