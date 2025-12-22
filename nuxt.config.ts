@@ -13,6 +13,28 @@ export default defineNuxtConfig({
     },
   },
 
+  // Performance optimizations
+  experimental: {
+    payloadExtraction: true, // Extract payload for better caching
+    renderJsonPayloads: true, // Render JSON payloads
+    viewTransition: false, // Disable view transitions if not needed
+  },
+
+  // Build optimizations
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true,
+    },
+  },
+
+  // Enable tree-shaking for better bundle size
+  features: {
+    inlineStyles: false, // Don't inline all styles, use external CSS
+  },
+
   // Route Rules - SWR Cache Strategy for Performance
   routeRules: {
     // Pages marketing - cache long
@@ -101,6 +123,52 @@ export default defineNuxtConfig({
         },
       },
     },
+    build: {
+      // Minification optimizations
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true, // Remove console.log in production
+          drop_debugger: true,
+          pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        },
+      },
+      // Code splitting optimizations
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            // Vendor chunk for node_modules
+            if (id.includes('node_modules')) {
+              // Separate echarts into its own chunk
+              if (id.includes('echarts') || id.includes('zrender')) {
+                return 'echarts';
+              }
+              // Separate vue/nuxt core
+              if (id.includes('vue') || id.includes('nuxt') || id.includes('@vue')) {
+                return 'vue-core';
+              }
+              // Separate reka-ui
+              if (id.includes('reka-ui')) {
+                return 'reka-ui';
+              }
+              // Other vendors
+              return 'vendor';
+            }
+          },
+        },
+      },
+      // Optimize chunk size
+      chunkSizeWarningLimit: 1000,
+      cssCodeSplit: true,
+    },
+    css: {
+      preprocessorOptions: {
+        css: {
+          // Enable CSS minification
+          minify: true,
+        },
+      },
+    },
   },
 
   modules: [
@@ -171,10 +239,25 @@ export default defineNuxtConfig({
     fallback: "light",
   },
 
+  // Image optimization
+  image: {
+    formats: ['webp', 'avif'], // Use modern formats
+    quality: 80,
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+  },
+
   // Nitro configuration for deployment
   nitro: {
-    preset: "netlify",
+    preset: process.env.NETLIFY ? "netlify" : "node-server",
     compressPublicAssets: true, // Enable Brotli/Gzip compression
+    minify: true, // Minify server output
     netlify: {
       images: {
         remote_images: ['https://*'],
@@ -183,6 +266,11 @@ export default defineNuxtConfig({
     // Externalize native modules for Netlify
     externals: {
       inline: ["better-sqlite3"],
+    },
+    // Prerendering for better performance
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
     },
   },
 });
