@@ -7,6 +7,15 @@ import DpMobileNav from "./DpMobileNav.vue";
 const { t, locale, locales, setLocale } = useI18n();
 const { isAuthenticated } = useAuth();
 
+// Handle language change with page reload for SSR
+const changeLanguage = async (localeCode: string) => {
+  await setLocale(localeCode);
+  // Force page reload to get SSR content in new language
+  if (process.client) {
+    window.location.reload();
+  }
+};
+
 // Mobile menu state
 const mobileMenuOpen = ref(false);
 
@@ -126,7 +135,7 @@ const mobileNavLinks = computed(() => [
             <button
               v-for="loc in locales"
               :key="loc.code"
-              @click="setLocale(loc.code)"
+              @click="changeLanguage(loc.code)"
               :class="[
                 'px-3 py-2 rounded-md text-sm font-medium transition-colors',
                 locale === loc.code
