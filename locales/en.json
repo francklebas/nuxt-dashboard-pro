@@ -1,0 +1,407 @@
+{
+  "welcome": "Welcome",
+  "common": {
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "home": {
+    "meta": {
+      "title": "Nuxt Dashboard Pro - Premium Template for Business Apps",
+      "description": "Professional Nuxt 3 template with modern UI, dark mode, TypeScript and accessible components. Launch your SaaS in days instead of months."
+    },
+    "nav": {
+      "demo": "Demo",
+      "pricing": "Pricing",
+      "login": "Sign In",
+      "getStarted": "Get Started"
+    },
+    "hero": {
+      "title": "Nuxt Dashboard Pro – The elegant and performant template for your business apps",
+      "subtitle": "Modern UI, accessible components, dark mode, responsive, easy customization – Ready to launch your SaaS or admin in days instead of months.",
+      "demoButtonText": "View Interactive Demo",
+      "waitlistButtonText": "Join Waitlist"
+    },
+    "features": {
+      "sectionTitle": "Everything you need",
+      "sectionDescription": "Ready-to-use components to build your professional application quickly",
+      "dashboard": {
+        "title": "Complete Dashboard",
+        "description": "Modern admin interface with analytics, charts and KPIs."
+      },
+      "auth": {
+        "title": "Authentication",
+        "description": "Complete system: login, register, reset password, email verification."
+      },
+      "darkMode": {
+        "title": "Dark Mode",
+        "description": "Dark/light theme with smooth transitions and CSS customization."
+      },
+      "dataTables": {
+        "title": "Data Tables",
+        "description": "Advanced tables with sorting, filtering, pagination and export."
+      },
+      "responsive": {
+        "title": "Responsive",
+        "description": "Perfect adaptive design on mobile, tablet and desktop."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Lighthouse 95+, optimized for speed and SEO."
+      }
+    },
+    "demo": {
+      "title": "Try the Demo Now",
+      "subtitle": "Sign in with demo credentials to explore all features",
+      "credentialsLabel": "Demo credentials:",
+      "loginButton": "Sign In",
+      "demoButton": "View Full Demo"
+    },
+    "components": {
+      "sectionTitle": "UI Components",
+      "sectionDescription": "Library of reusable and customizable components",
+      "buttonVariants": "Button Variants",
+      "buttonSizes": "Button Sizes",
+      "modalExamples": "Modal Examples",
+      "openSimpleModal": "Open Simple Modal",
+      "openFormModal": "Open Form Modal",
+      "simpleModalTitle": "Simple Modal Title",
+      "simpleModalDescription": "This is a simple modal example with a title and description.",
+      "simpleModalContent": "This is the content of the modal. You can add any content here.",
+      "simpleModalHint": "Click the X button or press Escape to close the modal.",
+      "editProfile": "Edit Profile",
+      "editProfileDescription": "Make changes to your profile here.",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "cancel": "Cancel",
+      "saveChanges": "Save Changes"
+    },
+    "cta": {
+      "title": "Launch Your Project Today",
+      "description": "Save weeks of development with our professional template",
+      "createAccount": "Create Account",
+      "viewPricing": "View Pricing"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "form": "Contact Form",
+    "components": "Components",
+    "pricing": "Pricing",
+    "products": "Products",
+    "users": "Users",
+    "orders": "Orders",
+    "profile": "Profile",
+    "settings": "Settings",
+    "billing": "Billing",
+    "logout": "Logout"
+  },
+  "components": {
+    "title": "Component Library",
+    "description": "Browse and explore available UI components",
+    "buttons": "Buttons",
+    "buttonsDesc": "Button component with multiple variants and sizes",
+    "modals": "Modals",
+    "modalsDesc": "Modal dialogs for displaying content",
+    "tabs": "Tabs",
+    "tabsDesc": "Accessible tab navigation component with icon support",
+    "tooltips": "Tooltips",
+    "tooltipsDesc": "Contextual information on hover or focus with flexible positioning",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "form": {
+    "title": "Contact Form",
+    "description": "Fill out the form below to get in touch with us",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "email": "Email Address",
+    "emailPlaceholder": "your.email{'@'}example.com",
+    "message": "Message",
+    "messagePlaceholder": "Type your message here...",
+    "submit": "Send Message",
+    "cancel": "Cancel",
+    "success": "Your message has been sent successfully!",
+    "error": "An error occurred. Please try again.",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address"
+  },
+  "pricing": {
+    "title": "Business Operations Framework Pricing",
+    "subtitle": "Business Operations Platform for Modern Teams. Choose the right plan for your needs.",
+    "period": "one-time",
+    "popularBadge": "Recommended",
+    "footer": "All licenses include lifetime updates and full source code access.",
+    "community": {
+      "title": "Community",
+      "description": "Free for FOSS (Free and Open Source Software) projects only",
+      "cta": "Get Started",
+      "features": {
+        "source": "Full source code access",
+        "components": "All UI components",
+        "updates": "Lifetime updates",
+        "documentation": "Complete documentation",
+        "community": "Community support",
+        "commercial": "Commercial use",
+        "support": "Priority support"
+      }
+    },
+    "commercial": {
+      "title": "Commercial",
+      "description": "For commercial projects and businesses",
+      "cta": "Buy License",
+      "features": {
+        "everything": "Everything in Community",
+        "commercial": "Commercial use license",
+        "support": "Priority email support",
+        "priority": "Priority bug fixes",
+        "updates": "Early access to new features",
+        "templates": "Additional page templates",
+        "customization": "Custom feature requests"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Welcome back! Please enter your details.",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "submitting": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "register": "Sign up",
+      "orContinueWith": "Or continue with",
+      "success": "Login successful! Redirecting...",
+      "errors": {
+        "invalidCredentials": "Invalid email or password",
+        "emailNotVerified": "Please verify your email address",
+        "accountLocked": "Your account has been locked"
+      }
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "passwordNoUppercase": "Password must contain at least one uppercase letter",
+      "passwordNoLowercase": "Password must contain at least one lowercase letter",
+      "passwordNoNumber": "Password must contain at least one number",
+      "passwordMismatch": "Passwords do not match"
+    },
+    "oauth": {
+      "google": "Continue with Google",
+      "github": "Continue with GitHub",
+      "gitlab": "Continue with GitLab",
+      "facebook": "Continue with Facebook",
+      "twitter": "Continue with Twitter"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Get started with your free account.",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Create a strong password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "terms": "I agree to the {0} and {1}",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "submit": "Create Account",
+      "submitting": "Creating account...",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in",
+      "orContinueWith": "Or sign up with",
+      "success": "Account created! Please check your email to verify your account.",
+      "errors": {
+        "emailExists": "This email is already registered",
+        "weakPassword": "Password is too weak",
+        "passwordMismatch": "Passwords do not match",
+        "termsNotAccepted": "You must accept the terms and conditions"
+      },
+      "passwordStrength": {
+        "weak": "Weak",
+        "medium": "Medium",
+        "strong": "Strong"
+      }
+    },
+    "verifyEmail": {
+      "title": "Verify Email",
+      "verifying": "Verifying your email...",
+      "success": "Email verified successfully!",
+      "successMessage": "Your email has been verified. You can now log in.",
+      "redirecting": "Redirecting to login in {0} seconds...",
+      "error": "Verification failed",
+      "errorMessage": "The verification link is invalid or has expired.",
+      "resend": "Resend verification email",
+      "resending": "Sending...",
+      "resendSuccess": "Verification email sent! Please check your inbox."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email and we'll send you reset instructions.",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "submit": "Send Reset Link",
+      "submitting": "Sending...",
+      "backToLogin": "Back to login",
+      "success": "If an account exists with this email, you will receive a password reset link.",
+      "checkEmail": "Check your email for reset instructions"
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your new password below.",
+      "password": "New Password",
+      "passwordPlaceholder": "Create a new password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "submit": "Reset Password",
+      "submitting": "Resetting...",
+      "success": "Password reset successful! You can now log in.",
+      "redirecting": "Redirecting to login...",
+      "errors": {
+        "invalidToken": "Invalid or expired reset link",
+        "passwordMismatch": "Passwords do not match"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}!",
+    "welcomeGuest": "Welcome to your Dashboard",
+    "overview": "Overview",
+    "stats": {
+      "totalUsers": "Total Users",
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "conversion": "Conversion Rate",
+      "growth": "Growth",
+      "visitors": "Visitors",
+      "avgSessionTime": "Avg. Session Time"
+    },
+    "charts": {
+      "title": "Performance Trends",
+      "description": "View your key metrics over time",
+      "revenue": "Revenue",
+      "users": "Users",
+      "orders": "Orders",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "empty": "No recent activity",
+      "viewAll": "View all activity"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "newUser": "New User",
+      "newUserDesc": "Create a new user account",
+      "viewReports": "View Reports",
+      "viewReportsDesc": "Access analytics reports",
+      "settings": "Settings",
+      "settingsDesc": "Manage application settings",
+      "exportData": "Export Data",
+      "exportDataDesc": "Download your data"
+    },
+    "metrics": {
+      "vsLastMonth": "vs last month",
+      "vsLastWeek": "vs last week",
+      "thisMonth": "this month",
+      "thisWeek": "this week",
+      "today": "today"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your account settings and preferences",
+    "save": "Save Changes",
+    "saving": "Saving...",
+    "tabs": {
+      "profile": "Profile",
+      "account": "Account",
+      "preferences": "Preferences",
+      "billing": "Billing",
+      "team": "Team"
+    },
+    "profile": {
+      "title": "Profile Information",
+      "description": "Update your personal information and profile picture",
+      "photo": "Profile Photo",
+      "uploadPhoto": "Upload Photo",
+      "photoHint": "JPG, PNG or GIF. Max size 2MB.",
+      "name": "Full Name",
+      "email": "Email Address",
+      "emailHint": "Your email address cannot be changed",
+      "bio": "Bio",
+      "bioPlaceholder": "Tell us about yourself...",
+      "bioHint": "Brief description for your profile. Max 160 characters.",
+      "saved": "Profile updated successfully!"
+    },
+    "account": {
+      "password": {
+        "title": "Change Password",
+        "description": "Update your password to keep your account secure",
+        "current": "Current Password",
+        "new": "New Password",
+        "confirm": "Confirm Password",
+        "update": "Update Password",
+        "updated": "Password updated successfully!"
+      },
+      "twoFactor": {
+        "title": "Two-Factor Authentication",
+        "description": "Add an extra layer of security to your account",
+        "status": "2FA Status: Disabled",
+        "statusDesc": "Protect your account with two-factor authentication",
+        "enable": "Enable 2FA"
+      }
+    },
+    "preferences": {
+      "title": "Preferences",
+      "description": "Customize your experience",
+      "language": "Language",
+      "timezone": "Timezone",
+      "saved": "Preferences updated successfully!",
+      "notifications": {
+        "email": "Email Notifications",
+        "updates": "Product Updates",
+        "updatesDesc": "News, announcements, and product updates",
+        "marketing": "Marketing Emails",
+        "marketingDesc": "Offers, promotions, and tips"
+      }
+    },
+    "billing": {
+      "plan": {
+        "title": "Current Plan",
+        "description": "Manage your subscription and billing",
+        "current": "Free Plan",
+        "currentDesc": "You are currently on the free plan",
+        "upgrade": "Upgrade Plan"
+      },
+      "payment": {
+        "title": "Payment Method",
+        "description": "Manage your payment information",
+        "update": "Update"
+      }
+    },
+    "team": {
+      "title": "Team Members",
+      "description": "Manage team members and their permissions",
+      "invite": "Invite Member",
+      "inviteSuccess": "Invitation sent successfully!",
+      "confirmRemove": "Are you sure you want to remove this member?"
+    }
+  }
+}

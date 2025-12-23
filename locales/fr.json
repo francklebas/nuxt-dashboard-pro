@@ -1,0 +1,407 @@
+{
+  "welcome": "Bienvenue",
+  "common": {
+    "theme": "Thème",
+    "language": "Langue"
+  },
+  "home": {
+    "meta": {
+      "title": "Nuxt Dashboard Pro - Template Premium pour Applications Business",
+      "description": "Template Nuxt 3 professionnel avec UI moderne, dark mode, TypeScript et composants accessibles. Lancez votre SaaS en jours au lieu de mois."
+    },
+    "nav": {
+      "demo": "Démo",
+      "pricing": "Tarifs",
+      "login": "Connexion",
+      "getStarted": "Commencer"
+    },
+    "hero": {
+      "title": "Nuxt Dashboard Pro, le template élégant et performant pour vos apps business",
+      "subtitle": "UI moderne, composants accessibles, dark mode, responsive, customisation facile – Prêt à lancer votre SaaS ou admin en jours au lieu de mois.",
+      "demoButtonText": "Voir la Demo Interactive",
+      "waitlistButtonText": "Rejoindre la Waitlist"
+    },
+    "features": {
+      "sectionTitle": "Tout ce dont vous avez besoin",
+      "sectionDescription": "Des composants prêts à l'emploi pour créer votre application professionnelle rapidement",
+      "dashboard": {
+        "title": "Dashboard Complet",
+        "description": "Interface d'administration moderne avec analytics, graphiques et KPIs."
+      },
+      "auth": {
+        "title": "Authentication",
+        "description": "Système complet : login, register, reset password, email verification."
+      },
+      "darkMode": {
+        "title": "Dark Mode",
+        "description": "Thème sombre/clair avec transitions fluides et personnalisation CSS."
+      },
+      "dataTables": {
+        "title": "Data Tables",
+        "description": "Tables avancées avec tri, filtrage, pagination et export."
+      },
+      "responsive": {
+        "title": "Responsive",
+        "description": "Design adaptatif parfait sur mobile, tablette et desktop."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Lighthouse 95+, optimisé pour la vitesse et le SEO."
+      }
+    },
+    "demo": {
+      "title": "Essayez la Démo Maintenant",
+      "subtitle": "Connectez-vous avec les credentials de démonstration pour explorer toutes les fonctionnalités",
+      "credentialsLabel": "Credentials de démonstration :",
+      "loginButton": "Se Connecter",
+      "demoButton": "Voir la Démo Complète"
+    },
+    "components": {
+      "sectionTitle": "Composants UI",
+      "sectionDescription": "Bibliothèque de composants réutilisables et personnalisables",
+      "buttonVariants": "Variantes de Boutons",
+      "buttonSizes": "Tailles de Boutons",
+      "modalExamples": "Exemples de Modales",
+      "openSimpleModal": "Ouvrir la Modale Simple",
+      "openFormModal": "Ouvrir la Modale Formulaire",
+      "simpleModalTitle": "Titre de Modale Simple",
+      "simpleModalDescription": "Ceci est un exemple de modale simple avec un titre et une description.",
+      "simpleModalContent": "Ceci est le contenu de la modale. Vous pouvez ajouter n'importe quel contenu ici.",
+      "simpleModalHint": "Cliquez sur le bouton X ou appuyez sur Echap pour fermer la modale.",
+      "editProfile": "Modifier le Profil",
+      "editProfileDescription": "Apportez des modifications à votre profil ici.",
+      "name": "Nom",
+      "namePlaceholder": "Entrez votre nom",
+      "email": "Email",
+      "emailPlaceholder": "Entrez votre email",
+      "cancel": "Annuler",
+      "saveChanges": "Enregistrer les modifications"
+    },
+    "cta": {
+      "title": "Lancez Votre Projet Aujourd'hui",
+      "description": "Gagnez des semaines de développement avec notre template professionnel",
+      "createAccount": "Créer un Compte",
+      "viewPricing": "Voir les Tarifs"
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "form": "Formulaire de contact",
+    "components": "Composants",
+    "pricing": "Tarifs",
+    "products": "Produits",
+    "users": "Utilisateurs",
+    "orders": "Commandes",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "billing": "Facturation",
+    "logout": "Déconnexion"
+  },
+  "components": {
+    "title": "Bibliothèque de composants",
+    "description": "Parcourir et explorer les composants d'interface disponibles",
+    "buttons": "Boutons",
+    "buttonsDesc": "Composant bouton avec plusieurs variantes et tailles",
+    "modals": "Modales",
+    "modalsDesc": "Boîtes de dialogue modales pour afficher du contenu",
+    "tabs": "Onglets",
+    "tabsDesc": "Composant de navigation par onglets accessible avec support d'icônes",
+    "tooltips": "Infobulles",
+    "tooltipsDesc": "Information contextuelle au survol ou au focus avec positionnement flexible",
+    "copy": "Copier",
+    "copied": "Copié !"
+  },
+  "form": {
+    "title": "Formulaire de contact",
+    "description": "Remplissez le formulaire ci-dessous pour nous contacter",
+    "firstName": "Prénom",
+    "firstNamePlaceholder": "Entrez votre prénom",
+    "lastName": "Nom",
+    "lastNamePlaceholder": "Entrez votre nom",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre email",
+    "message": "Message",
+    "messagePlaceholder": "Tapez votre message ici...",
+    "submit": "Envoyer le message",
+    "cancel": "Annuler",
+    "success": "Votre message a été envoyé avec succès !",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "required": "Ce champ est requis",
+    "invalidEmail": "Veuillez entrer une adresse e-mail valide"
+  },
+  "pricing": {
+    "title": "Tarifs Business Operations Framework",
+    "subtitle": "Plateforme d'opérations commerciales pour équipes modernes. Choisissez le plan adapté à vos besoins.",
+    "period": "achat unique",
+    "popularBadge": "Recommandé",
+    "footer": "Toutes les licences incluent les mises à jour à vie et l'accès au code source complet.",
+    "community": {
+      "title": "Community",
+      "description": "Gratuit uniquement pour les projets FOSS (logiciels libres et open-source)",
+      "cta": "Commencer",
+      "features": {
+        "source": "Accès au code source complet",
+        "components": "Tous les composants UI",
+        "updates": "Mises à jour à vie",
+        "documentation": "Documentation complète",
+        "community": "Support communautaire",
+        "commercial": "Usage commercial",
+        "support": "Support prioritaire"
+      }
+    },
+    "commercial": {
+      "title": "Commercial",
+      "description": "Pour les projets commerciaux et entreprises",
+      "cta": "Acheter la licence",
+      "features": {
+        "everything": "Tout ce qui est dans Community",
+        "commercial": "Licence d'utilisation commerciale",
+        "support": "Support e-mail prioritaire",
+        "priority": "Corrections de bugs prioritaires",
+        "updates": "Accès anticipé aux nouvelles fonctionnalités",
+        "templates": "Templates de pages additionnels",
+        "customization": "Demandes de fonctionnalités personnalisées"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Connexion",
+      "subtitle": "Bon retour ! Veuillez entrer vos identifiants.",
+      "email": "E-mail",
+      "emailPlaceholder": "Entrez votre email",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié ?",
+      "submit": "Se connecter",
+      "submitting": "Connexion...",
+      "noAccount": "Pas encore de compte ?",
+      "register": "S'inscrire",
+      "orContinueWith": "Ou continuer avec",
+      "success": "Connexion réussie ! Redirection...",
+      "errors": {
+        "invalidCredentials": "E-mail ou mot de passe invalide",
+        "emailNotVerified": "Veuillez vérifier votre adresse e-mail",
+        "accountLocked": "Votre compte a été verrouillé"
+      }
+    },
+    "validation": {
+      "required": "Ce champ est requis",
+      "invalidEmail": "Veuillez entrer une adresse e-mail valide",
+      "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
+      "passwordNoUppercase": "Le mot de passe doit contenir au moins une lettre majuscule",
+      "passwordNoLowercase": "Le mot de passe doit contenir au moins une lettre minuscule",
+      "passwordNoNumber": "Le mot de passe doit contenir au moins un chiffre",
+      "passwordMismatch": "Les mots de passe ne correspondent pas"
+    },
+    "oauth": {
+      "google": "Continuer avec Google",
+      "github": "Continuer avec GitHub",
+      "gitlab": "Continuer avec GitLab",
+      "facebook": "Continuer avec Facebook",
+      "twitter": "Continuer avec Twitter"
+    },
+    "register": {
+      "title": "Créer un compte",
+      "subtitle": "Commencez avec votre compte gratuit.",
+      "name": "Nom complet",
+      "namePlaceholder": "Entrez votre nom complet",
+      "email": "E-mail",
+      "emailPlaceholder": "Entrez votre email",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Créez un mot de passe fort",
+      "confirmPassword": "Confirmer le mot de passe",
+      "confirmPasswordPlaceholder": "Ressaisissez votre mot de passe",
+      "terms": "J'accepte les {0} et la {1}",
+      "termsOfService": "Conditions d'utilisation",
+      "privacyPolicy": "Politique de confidentialité",
+      "submit": "Créer un compte",
+      "submitting": "Création du compte...",
+      "hasAccount": "Vous avez déjà un compte ?",
+      "login": "Se connecter",
+      "orContinueWith": "Ou s'inscrire avec",
+      "success": "Compte créé ! Veuillez vérifier votre e-mail pour activer votre compte.",
+      "errors": {
+        "emailExists": "Cet e-mail est déjà enregistré",
+        "weakPassword": "Le mot de passe est trop faible",
+        "passwordMismatch": "Les mots de passe ne correspondent pas",
+        "termsNotAccepted": "Vous devez accepter les conditions d'utilisation"
+      },
+      "passwordStrength": {
+        "weak": "Faible",
+        "medium": "Moyen",
+        "strong": "Fort"
+      }
+    },
+    "verifyEmail": {
+      "title": "Vérifier l'e-mail",
+      "verifying": "Vérification de votre e-mail...",
+      "success": "E-mail vérifié avec succès !",
+      "successMessage": "Votre e-mail a été vérifié. Vous pouvez maintenant vous connecter.",
+      "redirecting": "Redirection vers la connexion dans {0} secondes...",
+      "error": "Échec de la vérification",
+      "errorMessage": "Le lien de vérification est invalide ou a expiré.",
+      "resend": "Renvoyer l'e-mail de vérification",
+      "resending": "Envoi...",
+      "resendSuccess": "E-mail de vérification envoyé ! Veuillez vérifier votre boîte de réception."
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié",
+      "subtitle": "Entrez votre e-mail et nous vous enverrons les instructions.",
+      "email": "E-mail",
+      "emailPlaceholder": "Entrez votre email",
+      "submit": "Envoyer le lien",
+      "submitting": "Envoi...",
+      "backToLogin": "Retour à la connexion",
+      "success": "Si un compte existe avec cet e-mail, vous recevrez un lien de réinitialisation.",
+      "checkEmail": "Vérifiez votre e-mail pour les instructions"
+    },
+    "resetPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Entrez votre nouveau mot de passe ci-dessous.",
+      "password": "Nouveau mot de passe",
+      "passwordPlaceholder": "Créez un nouveau mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "confirmPasswordPlaceholder": "Ressaisissez votre mot de passe",
+      "submit": "Réinitialiser",
+      "submitting": "Réinitialisation...",
+      "success": "Mot de passe réinitialisé ! Vous pouvez maintenant vous connecter.",
+      "redirecting": "Redirection vers la connexion...",
+      "errors": {
+        "invalidToken": "Lien de réinitialisation invalide ou expiré",
+        "passwordMismatch": "Les mots de passe ne correspondent pas"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bon retour, {name} !",
+    "welcomeGuest": "Bienvenue sur votre tableau de bord",
+    "overview": "Vue d'ensemble",
+    "stats": {
+      "totalUsers": "Utilisateurs totaux",
+      "revenue": "Revenu",
+      "orders": "Commandes",
+      "conversion": "Taux de conversion",
+      "growth": "Croissance",
+      "visitors": "Visiteurs",
+      "avgSessionTime": "Durée moy. de session"
+    },
+    "charts": {
+      "title": "Tendances de performance",
+      "description": "Visualisez vos métriques clés dans le temps",
+      "revenue": "Revenu",
+      "users": "Utilisateurs",
+      "orders": "Commandes",
+      "daily": "Quotidien",
+      "weekly": "Hebdomadaire",
+      "monthly": "Mensuel",
+      "yearly": "Annuel"
+    },
+    "activity": {
+      "title": "Activité récente",
+      "empty": "Aucune activité récente",
+      "viewAll": "Voir toute l'activité"
+    },
+    "quickActions": {
+      "title": "Actions rapides",
+      "newUser": "Nouvel utilisateur",
+      "newUserDesc": "Créer un nouveau compte utilisateur",
+      "viewReports": "Voir les rapports",
+      "viewReportsDesc": "Accéder aux rapports analytiques",
+      "settings": "Paramètres",
+      "settingsDesc": "Gérer les paramètres de l'application",
+      "exportData": "Exporter les données",
+      "exportDataDesc": "Télécharger vos données"
+    },
+    "metrics": {
+      "vsLastMonth": "vs mois dernier",
+      "vsLastWeek": "vs semaine dernière",
+      "thisMonth": "ce mois",
+      "thisWeek": "cette semaine",
+      "today": "aujourd'hui"
+    }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "description": "Gérez vos paramètres de compte et préférences",
+    "save": "Enregistrer les modifications",
+    "saving": "Enregistrement...",
+    "tabs": {
+      "profile": "Profil",
+      "account": "Compte",
+      "preferences": "Préférences",
+      "billing": "Facturation",
+      "team": "Équipe"
+    },
+    "profile": {
+      "title": "Informations du profil",
+      "description": "Mettez à jour vos informations personnelles et votre photo de profil",
+      "photo": "Photo de profil",
+      "uploadPhoto": "Télécharger une photo",
+      "photoHint": "JPG, PNG ou GIF. Taille max 2MB.",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "emailHint": "Votre adresse e-mail ne peut pas être modifiée",
+      "bio": "Biographie",
+      "bioPlaceholder": "Parlez-nous de vous...",
+      "bioHint": "Brève description de votre profil. Max 160 caractères.",
+      "saved": "Profil mis à jour avec succès !"
+    },
+    "account": {
+      "password": {
+        "title": "Changer le mot de passe",
+        "description": "Mettez à jour votre mot de passe pour sécuriser votre compte",
+        "current": "Mot de passe actuel",
+        "new": "Nouveau mot de passe",
+        "confirm": "Confirmer le mot de passe",
+        "update": "Mettre à jour le mot de passe",
+        "updated": "Mot de passe mis à jour avec succès !"
+      },
+      "twoFactor": {
+        "title": "Authentification à deux facteurs",
+        "description": "Ajoutez une couche de sécurité supplémentaire à votre compte",
+        "status": "Statut 2FA : Désactivé",
+        "statusDesc": "Protégez votre compte avec l'authentification à deux facteurs",
+        "enable": "Activer 2FA"
+      }
+    },
+    "preferences": {
+      "title": "Préférences",
+      "description": "Personnalisez votre expérience",
+      "language": "Langue",
+      "timezone": "Fuseau horaire",
+      "saved": "Préférences mises à jour avec succès !",
+      "notifications": {
+        "email": "Notifications par e-mail",
+        "updates": "Mises à jour du produit",
+        "updatesDesc": "Actualités, annonces et mises à jour du produit",
+        "marketing": "E-mails marketing",
+        "marketingDesc": "Offres, promotions et conseils"
+      }
+    },
+    "billing": {
+      "plan": {
+        "title": "Plan actuel",
+        "description": "Gérez votre abonnement et facturation",
+        "current": "Plan gratuit",
+        "currentDesc": "Vous êtes actuellement sur le plan gratuit",
+        "upgrade": "Mettre à niveau le plan"
+      },
+      "payment": {
+        "title": "Méthode de paiement",
+        "description": "Gérez vos informations de paiement",
+        "update": "Mettre à jour"
+      }
+    },
+    "team": {
+      "title": "Membres de l'équipe",
+      "description": "Gérez les membres de l'équipe et leurs permissions",
+      "invite": "Inviter un membre",
+      "inviteSuccess": "Invitation envoyée avec succès !",
+      "confirmRemove": "Êtes-vous sûr de vouloir supprimer ce membre ?"
+    }
+  }
+}
