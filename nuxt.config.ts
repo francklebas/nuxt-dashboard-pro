@@ -10,6 +10,12 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
+      // Resource hints for better performance
+      link: [
+        // Preconnect to Netlify CDN
+        { rel: 'dns-prefetch', href: 'https://nuxtdashashboardpro.netlify.app' },
+        { rel: 'preconnect', href: 'https://nuxtdashashboardpro.netlify.app', crossorigin: 'anonymous' },
+      ],
     },
   },
 
@@ -32,7 +38,7 @@ export default defineNuxtConfig({
 
   // Enable tree-shaking for better bundle size
   features: {
-    inlineStyles: false, // Don't inline all styles, use external CSS
+    inlineStyles: true, // Inline critical CSS to eliminate render-blocking
   },
 
   // Route Rules - SWR Cache Strategy for Performance
@@ -135,7 +141,9 @@ export default defineNuxtConfig({
       },
       // Optimize chunk size
       chunkSizeWarningLimit: 1000,
-      cssCodeSplit: true,
+      cssCodeSplit: false, // Don't split CSS to reduce network requests
+      // Inline small CSS chunks
+      assetsInlineLimit: 8192, // 8kb - inline assets smaller than this
     },
     css: {
       preprocessorOptions: {
