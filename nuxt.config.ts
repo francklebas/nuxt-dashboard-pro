@@ -43,52 +43,82 @@ export default defineNuxtConfig({
 
   // Route Rules - SWR Cache Strategy for Performance
   routeRules: {
-    // Pages marketing - cache long
+    // Pages marketing - cache long (with i18n support)
     '/': {
       swr: 3600, // 1 heure de cache
-      headers: { 'cache-control': 'public, max-age=3600, stale-while-revalidate=7200' }
+      headers: {
+        'cache-control': 'public, max-age=3600, stale-while-revalidate=7200',
+        'vary': 'Cookie' // Support i18n cookie
+      }
     },
     '/pricing': {
       swr: 3600,
-      headers: { 'cache-control': 'public, max-age=3600, stale-while-revalidate=7200' }
+      headers: {
+        'cache-control': 'public, max-age=3600, stale-while-revalidate=7200',
+        'vary': 'Cookie'
+      }
     },
     '/composants': {
       swr: 1800, // 30 minutes
-      headers: { 'cache-control': 'public, max-age=1800, stale-while-revalidate=3600' }
+      headers: {
+        'cache-control': 'public, max-age=1800, stale-while-revalidate=3600',
+        'vary': 'Cookie'
+      }
     },
     '/form': {
       swr: 1800,
-      headers: { 'cache-control': 'public, max-age=1800, stale-while-revalidate=3600' }
+      headers: {
+        'cache-control': 'public, max-age=1800, stale-while-revalidate=3600',
+        'vary': 'Cookie'
+      }
     },
 
     // Auth pages - cache moyen
     '/auth/**': {
       swr: 600, // 10 minutes
-      headers: { 'cache-control': 'public, max-age=600, stale-while-revalidate=1200' }
+      headers: {
+        'cache-control': 'public, max-age=600, stale-while-revalidate=1200',
+        'vary': 'Cookie'
+      }
     },
 
     // Dashboard - cache court mais efficace
     '/dashboard': {
       swr: 60, // 60 secondes
-      headers: { 'cache-control': 'public, max-age=60, stale-while-revalidate=120' }
+      headers: {
+        'cache-control': 'public, max-age=60, stale-while-revalidate=120',
+        'vary': 'Cookie'
+      }
     },
 
     // Data tables - cache moyen
     '/users': {
       swr: 120,
-      headers: { 'cache-control': 'public, max-age=120, stale-while-revalidate=240' }
+      headers: {
+        'cache-control': 'public, max-age=120, stale-while-revalidate=240',
+        'vary': 'Cookie'
+      }
     },
     '/products': {
       swr: 120,
-      headers: { 'cache-control': 'public, max-age=120, stale-while-revalidate=240' }
+      headers: {
+        'cache-control': 'public, max-age=120, stale-while-revalidate=240',
+        'vary': 'Cookie'
+      }
     },
     '/orders': {
       swr: 120,
-      headers: { 'cache-control': 'public, max-age=120, stale-while-revalidate=240' }
+      headers: {
+        'cache-control': 'public, max-age=120, stale-while-revalidate=240',
+        'vary': 'Cookie'
+      }
     },
     '/settings': {
       swr: 300,
-      headers: { 'cache-control': 'public, max-age=300, stale-while-revalidate=600' }
+      headers: {
+        'cache-control': 'public, max-age=300, stale-while-revalidate=600',
+        'vary': 'Cookie'
+      }
     },
 
     // API routes - cache pour mock data
