@@ -283,7 +283,18 @@ export default defineNuxtConfig({
     // Prerendering for better performance
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: [
+        '/',
+        '/fr',
+        '/fr/pricing',
+        '/fr/composants',
+        '/fr/form',
+        '/fr/dashboard',
+        '/fr/products',
+        '/fr/users',
+        '/fr/orders',
+        '/fr/settings',
+      ],
     },
   },
 });
