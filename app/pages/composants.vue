@@ -127,28 +127,41 @@ const demoTabs: DpTab[] = [
 // Playground modal state
 const playgroundModalOpen = ref(false);
 
-// Scroll spy - update active section based on scroll position
-const handleScroll = () => {
-  const scrollPosition = window.scrollY + 100;
+// Scroll spy using IntersectionObserver (no forced reflows)
+let observer: IntersectionObserver | null = null;
 
-  for (const section of sections) {
+const setupScrollSpy = () => {
+  const options = {
+    root: null,
+    rootMargin: '-100px 0px -66% 0px', // Trigger when section enters top third
+    threshold: 0,
+  };
+
+  observer = new IntersectionObserver((entries) => {
+    // Find the most visible section
+    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+    if (visibleEntries.length > 0) {
+      // Sort by intersection ratio to find most visible
+      visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      activeSection.value = visibleEntries[0].target.id;
+    }
+  }, options);
+
+  // Observe all sections
+  sections.forEach(section => {
     const element = document.getElementById(section.id);
     if (element) {
-      const { offsetTop, offsetHeight } = element;
-      if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-        activeSection.value = section.id;
-        break;
-      }
+      observer?.observe(element);
     }
-  }
+  });
 };
 
-// Smooth scroll to section
+// Smooth scroll to section (using scrollIntoView instead of offsetTop)
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
   if (element) {
     const offset = 80; // Account for fixed header
-    const elementPosition = element.offsetTop - offset;
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({
       top: elementPosition,
       behavior: "smooth",
@@ -207,11 +220,14 @@ const copyTooltipCode = async () => {
 };
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+  setupScrollSpy();
 });
 
 onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
+  if (observer) {
+    observer.disconnect();
+    observer = null;
+  }
 });
 </script>
 
