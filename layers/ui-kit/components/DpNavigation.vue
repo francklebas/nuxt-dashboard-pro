@@ -6,12 +6,27 @@ import DpMobileNav from "./DpMobileNav.vue";
 
 const { t, locale, locales } = useI18n();
 const { isAuthenticated } = useAuth();
-const switchLocalePath = useSwitchLocalePath();
+const route = useRoute();
 
 // Handle language change via URL navigation
+// Manual path construction to work around i18n route generation bug
 const changeLanguage = (localeCode: string) => {
-  const path = switchLocalePath(localeCode);
-  navigateTo(path);
+  const currentPath = route.path;
+
+  let newPath: string;
+  if (localeCode === 'en') {
+    // Switch to English: remove /fr prefix if present
+    newPath = currentPath.replace(/^\/fr/, '') || '/';
+  } else if (localeCode === 'fr') {
+    // Switch to French: add /fr prefix if not already present
+    newPath = currentPath.startsWith('/fr')
+      ? currentPath
+      : `/fr${currentPath === '/' ? '' : currentPath}`;
+  } else {
+    newPath = currentPath;
+  }
+
+  navigateTo(newPath);
 };
 
 // Mobile menu state

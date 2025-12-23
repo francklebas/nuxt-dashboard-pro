@@ -230,10 +230,17 @@ export default defineNuxtConfig({
   // Modules configuration
   i18n: {
     defaultLocale: "en",
-    langDir: "locales",
     locales: [
-      { code: "en", name: "English", file: "en.json" },
-      { code: "fr", name: "Français", file: "fr.json" },
+      {
+        code: "en",
+        name: "English",
+        file: fileURLToPath(new URL("./i18n/locales/en.json", import.meta.url))
+      },
+      {
+        code: "fr",
+        name: "Français",
+        file: fileURLToPath(new URL("./i18n/locales/fr.json", import.meta.url))
+      },
     ],
     strategy: "prefix_except_default", // URLs: /pricing (en), /fr/pricing (fr)
     detectBrowserLanguage: {
