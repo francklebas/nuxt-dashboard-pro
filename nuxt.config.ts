@@ -191,6 +191,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/scripts",
     "@nuxt/test-utils",
+    "@netlify/nuxt", // Netlify integration for proper SSR + static assets
     "reka-ui/nuxt",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
@@ -268,7 +269,7 @@ export default defineNuxtConfig({
 
   // Nitro configuration for deployment
   nitro: {
-    preset: process.env.NETLIFY ? "netlify" : "node-server",
+    // preset is managed by @netlify/nuxt module
     compressPublicAssets: true, // Enable Brotli/Gzip compression
     minify: true, // Minify server output
     netlify: {
