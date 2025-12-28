@@ -268,7 +268,7 @@ export default defineNuxtConfig({
 
   // Nitro configuration for deployment
   nitro: {
-    preset: process.env.NETLIFY ? "netlify" : "node-server",
+    // Using static generation (nuxt generate) instead of SSR for Netlify
     compressPublicAssets: true, // Enable Brotli/Gzip compression
     minify: true, // Minify server output
     netlify: {
