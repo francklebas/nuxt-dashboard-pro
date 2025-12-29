@@ -288,9 +288,9 @@ export default defineNuxtConfig({
   },
 
   // Runtime configuration for environment variables
+  // Values are set via NUXT_TURSO_DB_URL and NUXT_TURSO_AUTH_TOKEN env vars at runtime
   runtimeConfig: {
-    // Server-side only (not exposed to client)
-    tursoDbUrl: process.env.TURSO_DATABASE_URL,
-    tursoAuthToken: process.env.TURSO_AUTH_TOKEN,
+    tursoDbUrl: "",
+    tursoAuthToken: "",
   },
 });
