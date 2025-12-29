@@ -280,10 +280,10 @@ export default defineNuxtConfig({
     externals: {
       inline: ["better-sqlite3"],
     },
-    // Prerendering for better performance
-    prerender: {
-      crawlLinks: true,
-      routes: ['/'],
-    },
+    // Prerendering disabled - causes hash mismatch with Netlify preset
+    // prerender: {
+    //   crawlLinks: true,
+    //   routes: ['/'],
+    // },
   },
 });
