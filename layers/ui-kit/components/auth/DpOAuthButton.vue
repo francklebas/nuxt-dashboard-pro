@@ -22,27 +22,27 @@ const providerConfig = computed(() => {
   const configs = {
     google: {
       label: "Google",
-      icon: "logos:google-icon",
+      icon: "lucide:chrome",
       colorClass: "hover:border-[#4285F4] dark:hover:border-[#4285F4]",
     },
     github: {
       label: "GitHub",
-      icon: "mdi:github",
+      icon: "lucide:github",
       colorClass: "hover:border-[#333] dark:hover:border-[#fff]",
     },
     gitlab: {
       label: "GitLab",
-      icon: "mdi:gitlab",
+      icon: "lucide:gitlab",
       colorClass: "hover:border-[#FC6D26] dark:hover:border-[#FC6D26]",
     },
     facebook: {
       label: "Facebook",
-      icon: "mdi:facebook",
+      icon: "lucide:facebook",
       colorClass: "hover:border-[#1877F2] dark:hover:border-[#1877F2]",
     },
     twitter: {
       label: "Twitter",
-      icon: "mdi:twitter",
+      icon: "lucide:twitter",
       colorClass: "hover:border-[#1DA1F2] dark:hover:border-[#1DA1F2]",
     },
   };
