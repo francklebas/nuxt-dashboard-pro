@@ -286,4 +286,11 @@ export default defineNuxtConfig({
     //   routes: ['/'],
     // },
   },
+
+  // Runtime configuration for environment variables
+  runtimeConfig: {
+    // Server-side only (not exposed to client)
+    tursoDbUrl: process.env.TURSO_DATABASE_URL,
+    tursoAuthToken: process.env.TURSO_AUTH_TOKEN,
+  },
 });

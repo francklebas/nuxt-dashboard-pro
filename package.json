@@ -16,6 +16,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.15",
     "@nuxt/content": "3.8.2",
     "@nuxt/eslint": "1.11.0",
     "@nuxt/hints": "1.0.0-alpha.2",
