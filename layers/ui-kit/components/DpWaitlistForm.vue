@@ -66,8 +66,8 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <div class="w-full">
-    <form @submit.prevent="handleSubmit" class="space-y-4">
+  <div class="w-full space-y-3">
+    <form @submit.prevent="handleSubmit">
       <div class="flex flex-col sm:flex-row gap-3">
         <input
           v-model="email"
@@ -88,28 +88,28 @@ const handleSubmit = async () => {
           <span v-else>{{ buttonText }}</span>
         </DpButton>
       </div>
-
-      <!-- Status messages -->
-      <Transition
-        enter-active-class="transition-all duration-300"
-        enter-from-class="opacity-0 -translate-y-2"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-active-class="transition-all duration-200"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 -translate-y-2"
-      >
-        <div
-          v-if="status !== 'idle'"
-          class="text-sm rounded-lg p-3 break-words"
-          :class="[
-            status === 'success'
-              ? 'bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800'
-              : 'bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
-          ]"
-        >
-          {{ message }}
-        </div>
-      </Transition>
     </form>
+
+    <!-- Status messages -->
+    <Transition
+      enter-active-class="transition-all duration-300"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-200"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <div
+        v-if="status !== 'idle'"
+        class="text-sm rounded-lg p-3"
+        :class="[
+          status === 'success'
+            ? 'bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800'
+            : 'bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
+        ]"
+      >
+        {{ message }}
+      </div>
+    </Transition>
   </div>
 </template>
