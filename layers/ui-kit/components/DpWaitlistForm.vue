@@ -100,7 +100,7 @@ const handleSubmit = async () => {
       >
         <div
           v-if="status !== 'idle'"
-          class="text-sm rounded-lg p-3"
+          class="text-sm rounded-lg p-3 break-words"
           :class="[
             status === 'success'
               ? 'bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800'

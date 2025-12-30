@@ -223,7 +223,7 @@ const handleWaitlistSuccess = (email: string) => {
           @click.self="showWaitlistModal = false"
         >
           <div
-            class="relative w-full max-w-md bg-background rounded-2xl shadow-2xl border border-border p-6 space-y-6"
+            class="relative w-full max-w-md bg-background rounded-2xl shadow-2xl border border-border p-6 space-y-6 overflow-hidden"
             @click.stop
           >
             <button
