@@ -53,7 +53,11 @@ const handleSubmit = async () => {
     email.value = "";
   } catch (error: any) {
     status.value = "error";
-    message.value = error.data?.errors?.[0]?.message || props.errorMessage;
+    message.value =
+      error.data?.message ||
+      error.statusMessage ||
+      error.data?.errors?.[0]?.message ||
+      props.errorMessage;
     emit("error", error);
   } finally {
     isLoading.value = false;

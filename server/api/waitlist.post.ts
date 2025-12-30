@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
     if (existing.rows.length > 0) {
       throw createError({
         statusCode: 409,
-        statusMessage: "Cet email est déjà sur la liste d'attente",
+        message: "Cet email est déjà sur la liste d'attente",
       });
     }
 
@@ -55,13 +55,7 @@ export default defineEventHandler(async (event) => {
     if (error instanceof z.ZodError) {
       throw createError({
         statusCode: 400,
-        statusMessage: "Email invalide",
-        data: {
-          errors: error.errors.map((err) => ({
-            field: err.path.join("."),
-            message: err.message,
-          })),
-        },
+        message: "Email invalide",
       });
     }
 
@@ -69,7 +63,7 @@ export default defineEventHandler(async (event) => {
     console.error("Waitlist API error:", error);
     throw createError({
       statusCode: 500,
-      statusMessage: "Erreur serveur",
+      message: "Erreur serveur",
     });
   }
 });
