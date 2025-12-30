@@ -66,29 +66,25 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <div class="w-full space-y-3">
-    <form @submit.prevent="handleSubmit">
-      <div class="flex flex-col sm:flex-row gap-3">
-        <input
-          v-model="email"
-          type="email"
-          :placeholder="placeholder"
-          required
-          class="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-          :disabled="isLoading"
-        />
-        <DpButton
-          type="submit"
-          variant="primary"
-          size="lg"
-          :disabled="!isValidEmail || isLoading"
-          class="sm:w-auto w-full whitespace-nowrap"
-        >
-          <span v-if="isLoading">Joining...</span>
-          <span v-else>{{ buttonText }}</span>
-        </DpButton>
-      </div>
-    </form>
+  <form @submit.prevent="handleSubmit" class="grid grid-flow-row-dense grid-cols-3 gap-3">
+    <input
+      v-model="email"
+      type="email"
+      :placeholder="placeholder"
+      required
+      class="col-span-2 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+      :disabled="isLoading"
+    />
+    <DpButton
+      type="submit"
+      variant="primary"
+      size="lg"
+      :disabled="!isValidEmail || isLoading"
+      class="col-span-1 whitespace-nowrap"
+    >
+      <span v-if="isLoading">Joining...</span>
+      <span v-else>{{ buttonText }}</span>
+    </DpButton>
 
     <!-- Status messages -->
     <Transition
@@ -101,7 +97,7 @@ const handleSubmit = async () => {
     >
       <div
         v-if="status !== 'idle'"
-        class="text-sm rounded-lg p-3"
+        class="col-span-3 text-sm rounded-lg p-3"
         :class="[
           status === 'success'
             ? 'bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800'
@@ -111,5 +107,5 @@ const handleSubmit = async () => {
         {{ message }}
       </div>
     </Transition>
-  </div>
+  </form>
 </template>
